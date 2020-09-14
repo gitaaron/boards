@@ -60,6 +60,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  loading:
+    dependency: "direct main"
+    description:
+      path: "/Users/asurty/POpen/loading"
+      relative: false
+    source: path
+    version: "0.0.1"
   matcher:
     dependency: transitive
     description:

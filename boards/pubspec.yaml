@@ -12,6 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  loading:
+    path: /Users/asurty/POpen/loading
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
