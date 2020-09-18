@@ -1,22 +1,11 @@
+import 'package:boards/boards.dart';
 import 'package:boards/components/cross_platform_svg.dart';
+import 'package:boards/models/board_info.dart';
 import 'package:boards/models/board_overlay.dart';
+import 'package:boards/types.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:loading/loading.dart';
-
-
-enum BoardType { MONSTER, BEASTMAKER_2000 }
-
-class BoardInfo {
-  final String name;
-  final int numHolds;
-  BoardInfo(this.name, this.numHolds);
-}
-
-Map<BoardType, BoardInfo> boardsMap = {
-  BoardType.MONSTER:BoardInfo('monster', 25),
-  BoardType.BEASTMAKER_2000:BoardInfo('beastmaker_2000', 20),
-};
 
 
 class Board extends StatefulWidget {
@@ -28,7 +17,7 @@ class Board extends StatefulWidget {
 
   factory Board.fromType(BoardType boardType, BoardOverlay overlay) {
     BoardInfo boardInfo = boardsMap[boardType];
-    return Board(boardInfo.name, boardInfo.numHolds, overlay);
+    return Board(boardInfo.path, boardInfo.numHolds, overlay);
   }
 
   @override
@@ -47,8 +36,9 @@ class BoardState extends State<Board> {
       return Stack(
         children: [
           CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/board.svg', width:MediaQuery.of(context).size.width ),
-          CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/overlays/${widget.overlay.first}.svg', width:MediaQuery.of(context).size.width ),
-          CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/overlays/${widget.overlay.second}.svg', width:MediaQuery.of(context).size.width ),
+          ...widget.overlay.positions.map((int position) {
+              return CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/overlays/${position}.svg', width:MediaQuery.of(context).size.width );
+          }).toList()
         ],
       );
     }

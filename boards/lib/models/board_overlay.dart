@@ -1,5 +1,15 @@
 class BoardOverlay {
-  int first;
-  int second;
-  BoardOverlay(this.first, this.second);
+  List<int> _positions = [];
+
+  List<int> get positions {
+    return _positions;
+  }
+
+  void addPosition(int position) {
+    _positions.add(position);
+  }
+
+  BoardOverlay(List<int> positions) {
+    _positions = positions;
+  }
 }
