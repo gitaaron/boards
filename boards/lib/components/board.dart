@@ -12,12 +12,17 @@ class Board extends StatefulWidget {
   String name;
   int numHolds;
   BoardOverlay overlay;
+  BoardType type;
 
-  Board(this.name, this.numHolds, this.overlay);
+  Board(this.name, this.numHolds, this.overlay, this.type);
 
-  factory Board.fromType(BoardType boardType, BoardOverlay overlay) {
+  factory Board.fromType(BoardType boardType, {BoardOverlay overlay}) {
     BoardInfo boardInfo = boardsMap[boardType];
-    return Board(boardInfo.path, boardInfo.numHolds, overlay);
+    if(boardInfo==null) {
+      return Board('null', 0, null, null);
+    } else {
+      return Board(boardInfo.path, boardInfo.numHolds, overlay, boardType);
+    }
   }
 
   @override
@@ -29,6 +34,13 @@ class BoardState extends State<Board> {
 
   bool _isLoading = true;
 
+  List<Widget> _buildOverlays() {
+
+    return widget.overlay!=null?widget.overlay.positions.map((int position) {
+      return CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/overlays/${position}.svg', width:MediaQuery.of(context).size.width );
+    }).toList():[];
+  }
+
   Widget _buildBody() {
     if(_isLoading) {
       return Loading(insideContainer: true);
@@ -36,9 +48,7 @@ class BoardState extends State<Board> {
       return Stack(
         children: [
           CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/board.svg', width:MediaQuery.of(context).size.width ),
-          ...widget.overlay.positions.map((int position) {
-              return CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/overlays/${position}.svg', width:MediaQuery.of(context).size.width );
-          }).toList()
+          ..._buildOverlays()
         ],
       );
     }
@@ -47,7 +57,11 @@ class BoardState extends State<Board> {
 
   @override
   Widget build(BuildContext context) {
-    return _buildBody();
+    if(widget.type==null) {
+      return Container();
+    } else {
+      return _buildBody();
+    }
   }
 
   @override

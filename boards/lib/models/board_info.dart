@@ -22,6 +22,19 @@ class BoardInfo {
     return _edgesAvailable.last;
   }
 
+  bool containsEdge(int edge) {
+    return _edgesAvailable.contains(edge);
+  }
+
+  int nearestEdge(int edge) {
+    for(int edgeToFind in _edgesAvailable) {
+      if(edgeToFind > edge) {
+        return edgeToFind;
+      }
+    }
+    return _edgesAvailable.last;
+  }
+
   Map<int, BoardOverlay> get edgeOverlayMap { return _edgeOverlayMap; }
 
   BoardInfo(this.displayName, this.type, this.path, this.holds) {
