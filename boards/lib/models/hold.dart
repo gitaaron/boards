@@ -1,5 +1,8 @@
+import 'package:boards/types.dart';
+
 class Hold {
   final int position;
   final int edge;
-  Hold(this.position, this.edge);
+  final HorizontalBoardLocation location;
+  Hold(this.position, this.edge, this.location);
 }

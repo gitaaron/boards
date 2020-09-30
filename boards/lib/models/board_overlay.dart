@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'board_overlay.g.dart';
+
+@JsonSerializable(explicitToJson:true, anyMap:true)
 class BoardOverlay {
   List<int> _positions = [];
 
@@ -12,4 +17,15 @@ class BoardOverlay {
   BoardOverlay(List<int> positions) {
     _positions = positions;
   }
+
+
+  Map<String, dynamic> toJson() => _$BoardOverlayToJson(this);
+
+  factory BoardOverlay.fromJson(Map<String, dynamic> json) => _$BoardOverlayFromJson(json);
+
+  factory BoardOverlay.makeCopy(BoardOverlay from) {
+    return BoardOverlay(from.positions);
+  }
+
+
 }

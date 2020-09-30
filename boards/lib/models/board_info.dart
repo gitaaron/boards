@@ -28,11 +28,38 @@ class BoardInfo {
 
   int nearestEdge(int edge) {
     for(int edgeToFind in _edgesAvailable) {
-      if(edgeToFind > edge) {
+      if(edgeToFind >= edge) {
         return edgeToFind;
       }
     }
     return _edgesAvailable.last;
+  }
+
+  int edgeFromPosition(int position) {
+    int edge;
+    holds.forEach((Hold hold) {
+      if(hold.position==position) edge = hold.edge;
+    });
+    return edge;
+  }
+
+  int positionFromEdge(int edge, HorizontalBoardLocation location) {
+    int position;
+    int centerPosition;
+
+    holds.forEach((Hold hold) {
+      if(hold.edge==edge && hold.location==location) {
+        position = hold.position;
+      }
+
+      if(hold.edge==edge && hold.location==HorizontalBoardLocation.CENTER) {
+        centerPosition = hold.position;
+      }
+
+    });
+
+    return position ?? centerPosition;
+
   }
 
   Map<int, BoardOverlay> get edgeOverlayMap { return _edgeOverlayMap; }
