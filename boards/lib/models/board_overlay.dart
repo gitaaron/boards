@@ -1,3 +1,4 @@
+import 'package:boards/models/hand_positioning.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'board_overlay.g.dart';
@@ -11,13 +12,14 @@ class BoardOverlay {
   }
 
   void addPosition(int position) {
-    _positions.add(position);
+    if(position!=null) {
+      _positions.add(position);
+    }
   }
 
   BoardOverlay(List<int> positions) {
     _positions = positions;
   }
-
 
   Map<String, dynamic> toJson() => _$BoardOverlayToJson(this);
 
@@ -25,6 +27,13 @@ class BoardOverlay {
 
   factory BoardOverlay.makeCopy(BoardOverlay from) {
     return BoardOverlay(from.positions);
+  }
+
+  factory BoardOverlay.fromHandPositioning(HandPositioning handPositioning) {
+    BoardOverlay boardOverlay = BoardOverlay([]);
+    boardOverlay.addPosition(handPositioning.leftHandPosition);
+    boardOverlay.addPosition(handPositioning.rightHandPosition);
+    return boardOverlay;
   }
 
 
