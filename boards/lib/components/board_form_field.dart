@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 class BoardFormField extends FormField<BoardType> {
   BoardFormField({
+    final Function(BoardType) onChanged,
     FormFieldSetter<BoardType> onSaved,
     FormFieldValidator<BoardType> validator,
     bool autovalidate = false,
@@ -26,6 +27,7 @@ class BoardFormField extends FormField<BoardType> {
             hint:Text('Select a board'),
             onChanged:(BoardType value) {
               state.didChange(value);
+              if(onChanged!=null) onChanged(value);
             },
             items:boards.map<DropdownMenuItem<BoardType>>((BoardInfo value) {
               return DropdownMenuItem<BoardType>(
