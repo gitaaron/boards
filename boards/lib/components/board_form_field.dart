@@ -1,12 +1,17 @@
 import 'package:boards/boards.dart';
 import 'package:boards/components/board.dart';
 import 'package:boards/models/board_info.dart';
+import 'package:boards/models/hand_positioning.dart';
 import 'package:boards/types.dart';
 import 'package:flutter/material.dart';
+import 'package:boards/models/board_overlay.dart';
 
 class BoardFormField extends FormField<BoardType> {
+  final HandPositioning handPosition;
+
   BoardFormField({
     final Function(BoardType) onChanged,
+    this.handPosition,
     FormFieldSetter<BoardType> onSaved,
     FormFieldValidator<BoardType> validator,
     bool autovalidate = false,
@@ -38,7 +43,7 @@ class BoardFormField extends FormField<BoardType> {
           ),
           Visibility(
             visible:boardType!=null,
-            child:Board.fromType(boardType),
+            child:Board.fromType(boardType, overlay:BoardOverlay.fromHandPositioning(handPosition))
           ),
           state.hasError?
           Text(

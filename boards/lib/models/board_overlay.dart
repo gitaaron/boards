@@ -31,8 +31,8 @@ class BoardOverlay {
 
   factory BoardOverlay.fromHandPositioning(HandPositioning handPositioning) {
     BoardOverlay boardOverlay = BoardOverlay([]);
-    boardOverlay.addPosition(handPositioning.leftHandPosition);
-    boardOverlay.addPosition(handPositioning.rightHandPosition);
+    boardOverlay.addPosition(handPositioning?.leftHandPosition);
+    boardOverlay.addPosition(handPositioning?.rightHandPosition);
     return boardOverlay;
   }
 
