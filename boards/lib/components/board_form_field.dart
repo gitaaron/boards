@@ -7,17 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:boards/models/board_overlay.dart';
 
 class BoardFormField extends FormField<BoardType> {
-  final HandPositioning handPosition;
 
   BoardFormField({
     final Function(BoardType) onChanged,
-    this.handPosition,
+    final Function() handPosition,
     FormFieldSetter<BoardType> onSaved,
     FormFieldValidator<BoardType> validator,
     bool autovalidate = false,
     BuildContext context,
     BoardType initialValue,
-  }) : super(
+  }) : assert(context!=null), super(
     onSaved: onSaved,
     validator: validator,
     autovalidate: autovalidate,
@@ -27,23 +26,29 @@ class BoardFormField extends FormField<BoardType> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          DropdownButton<BoardType>(
-            value:boardType,
-            hint:Text('Select a board'),
-            onChanged:(BoardType value) {
-              state.didChange(value);
-              if(onChanged!=null) onChanged(value);
-            },
-            items:boards.map<DropdownMenuItem<BoardType>>((BoardInfo value) {
-              return DropdownMenuItem<BoardType>(
-                value:value.type,
-                child:Text(value.displayName),
-              );
-            }).toList(),
+          DropdownButtonHideUnderline(
+            child: ButtonTheme(
+              alignedDropdown: true,
+              child: DropdownButton<BoardType>(
+                value:boardType,
+                hint:Text('Select a board'),
+                onChanged:(BoardType value) {
+                  state.reset();
+                  state.didChange(value);
+                  if(onChanged!=null) onChanged(value);
+                },
+                items:boards.map<DropdownMenuItem<BoardType>>((BoardInfo value) {
+                  return DropdownMenuItem<BoardType>(
+                    value:value.type,
+                    child:Text('${value.displayName}'),
+                  );
+                }).toList(),
+              ),
+            ),
           ),
           Visibility(
             visible:boardType!=null,
-            child:Board.fromType(boardType, overlay:BoardOverlay.fromHandPositioning(handPosition))
+            child:Board.fromType(boardType, overlay:BoardOverlay.fromHandPositioning(handPosition()))
           ),
           state.hasError?
           Text(
