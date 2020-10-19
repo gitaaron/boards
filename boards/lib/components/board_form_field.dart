@@ -13,13 +13,13 @@ class BoardFormField extends FormField<BoardType> {
     final Function() handPosition,
     FormFieldSetter<BoardType> onSaved,
     FormFieldValidator<BoardType> validator,
+    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     bool autovalidate = false,
     BuildContext context,
     BoardType initialValue,
   }) : assert(context!=null), super(
     onSaved: onSaved,
     validator: validator,
-    autovalidate: autovalidate,
     initialValue: initialValue,
     builder: (FormFieldState<BoardType> state) {
       BoardType boardType = state.value;

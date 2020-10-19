@@ -25,20 +25,25 @@ class CrossPlatformSvg {
         alignment: alignment,
       );
     } else {
-      return SvgPicture.asset(
-        assetPath,
-        width: width,
-        height: height,
-        fit: fit,
-        color: color,
-        alignment: alignment,
-        placeholderBuilder: (_) => Container(
-          width: 30,
-          height: 30,
-          padding: EdgeInsets.all(30),
-          child: Loading(insideContainer:true),
-        ),
-      );
+      try {
+        return SvgPicture.network(
+          assetPath,
+          width: width,
+          height: height,
+          fit: fit,
+          color: color,
+          alignment: alignment,
+          placeholderBuilder: (_) =>
+            Container(
+              width: 30,
+              height: 30,
+              padding: EdgeInsets.all(30),
+              child: Loading(insideContainer: true),
+            ),
+        );
+      } catch(e) {
+        print('error');
+      }
     }
   }
 }

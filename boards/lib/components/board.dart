@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:loading/loading.dart';
 
+final String BASE_URL = 'https://raw.githubusercontent.com/gitaaron/boards/main/boards';
 
 class Board extends StatefulWidget {
   String name;
@@ -37,7 +38,7 @@ class BoardState extends State<Board> {
   List<Widget> _buildOverlays() {
 
     return widget.overlay!=null?widget.overlay.positions.map((int position) {
-      return CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/overlays/${position}.svg', width:MediaQuery.of(context).size.width );
+      return CrossPlatformSvg.asset('${BASE_URL}/board_svg/${widget.name}/overlays/${position}.svg', width:MediaQuery.of(context).size.width );
     }).toList():[];
   }
 
@@ -47,7 +48,7 @@ class BoardState extends State<Board> {
     } else {
       return Stack(
         children: [
-          CrossPlatformSvg.asset('packages/boards/board_svg/${widget.name}/board.svg', width:MediaQuery.of(context).size.width ),
+          CrossPlatformSvg.asset('${BASE_URL}/board_svg/${widget.name}/board.svg', width:MediaQuery.of(context).size.width ),
           ..._buildOverlays()
         ],
       );
@@ -70,83 +71,9 @@ class BoardState extends State<Board> {
     if(kIsWeb) {
       Future.wait([
         precacheImage(Image
-          .network('packages/boards/board_svg/monster/board.svg')
+          .network('${BASE_URL}/board_svg/${widget.name}/board.svg')
           .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/1.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/2.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/3.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/4.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/5.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/6.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/7.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/8.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/9.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/10.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/11.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/12.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/13.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/14.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/15.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/16.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/17.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/18.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/19.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/20.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/21.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/22.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/23.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/24.svg')
-          .image, context),
-        precacheImage(Image
-          .network('packages/boards/board_svg/monster/overlays/25.svg')
-          .image, context),
+          ...List<Future>.generate(widget.numHolds, (i) => precacheImage(Image.network('$BASE_URL}/board_svg/${widget.name}/overlays/${i}.svg').image, context)),
       ]).then((_) {
         setState(() {
           _isLoading = false;
