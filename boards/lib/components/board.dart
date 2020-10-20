@@ -17,15 +17,16 @@ class Board extends StatefulWidget {
   int numPositions;
   BoardOverlay overlay;
   BoardType type;
+  Map<String, List<BoardContent>> cachedBoardContents;
 
-  Board(this.name, this.numPositions, this.overlay, this.type);
+  Board(this.name, this.numPositions, this.overlay, this.type, {this.cachedBoardContents});
 
-  factory Board.fromType(BoardType boardType, {BoardOverlay overlay}) {
+  factory Board.fromType(BoardType boardType, {BoardOverlay overlay, Map<String, List<BoardContent>> cachedBoardContents}) {
     BoardInfo boardInfo = boardsMap[boardType];
     if(boardInfo==null) {
       return Board('null', 0, null, null);
     } else {
-      return Board(boardInfo.path, boardInfo.numPositions, overlay, boardType);
+      return Board(boardInfo.path, boardInfo.numPositions, overlay, boardType, cachedBoardContents: cachedBoardContents,);
     }
   }
 
@@ -35,7 +36,14 @@ class Board extends StatefulWidget {
 
 
 class BoardState extends State<Board> {
-  Map<String, List<BoardContent>> _cachedBoardContents = {};
+
+  Map<String, List<BoardContent>> _cachedBoardContents;
+
+  @override
+  void initState() {
+    super.initState();
+    _cachedBoardContents = widget.cachedBoardContents ?? {};
+  }
 
   bool _isLoading = true;
 
