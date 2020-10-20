@@ -9,9 +9,15 @@ class BoardInfo {
   final List<Hold> holds;
   List<int> _edgesAvailable;
   Map<int, BoardOverlay> _edgeOverlayMap;
+  int _positionCount = 0;
+  Map _positions = {};
 
   int get numHolds {
     return holds.length;
+  }
+
+  int get numPositions {
+    return _positionCount;
   }
 
   List<int> get edgesAvailable {
@@ -69,6 +75,10 @@ class BoardInfo {
     _edgesAvailable = [];
 
     holds.forEach((Hold hold) {
+      if(!(_positions[hold.position] ?? false)) {
+        _positionCount += 1;
+        _positions[hold.position] = true;
+      }
       if(!_edgesAvailable.contains(hold.edge)) _edgesAvailable.add(hold.edge);
       if(_edgeOverlayMap[hold.edge]==null) {
         _edgeOverlayMap[hold.edge] = BoardOverlay([hold.position]);
