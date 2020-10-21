@@ -95,18 +95,6 @@ class BoardState extends State<Board> {
       });
     } else {
 
-      if(getProtocol(widget.baseUrl)=='gs') {
-        Future.wait([
-          FirebaseCacheManager().getSingleFile(firebasePath(assetPath)),
-          ...List<Future>.generate(widget.numPositions, (i) => FirebaseCacheManager().getSingleFile(firebasePath(_overlayPath(i+1))))
-        ]);
-      } else {
-        Future.wait([
-          DefaultCacheManager().getSingleFile(assetPath),
-          ...List<Future>.generate(widget.numPositions, (i) => DefaultCacheManager().getSingleFile(_overlayPath(i+1)))
-        ]);
-      }
-
       setState(() {
         _isLoading = false;
       });
