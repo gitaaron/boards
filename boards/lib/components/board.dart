@@ -1,12 +1,14 @@
 import 'package:boards/boards.dart';
 import 'package:boards/components/board_provider.dart';
 import 'package:boards/components/cross_platform_svg.dart';
+import 'package:boards/helpers.dart';
 import 'package:boards/models/board_info.dart';
 import 'package:boards/models/board_overlay.dart';
 import 'package:boards/types.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutter_cache_manager_firebase/flutter_cache_manager_firebase.dart';
 import 'package:loading/loading.dart';
 import 'package:boards/models/board_content.dart';
 
@@ -17,16 +19,19 @@ class Board extends StatefulWidget {
   int numPositions;
   BoardOverlay overlay;
   BoardType type;
+  String baseUrl;
   Map<String, List<BoardContent>> cachedBoardContents;
 
-  Board(this.name, this.numPositions, this.overlay, this.type, {this.cachedBoardContents});
+  Board(this.name, this.numPositions, this.overlay, this.type, {this.cachedBoardContents, this.baseUrl}) {
+    baseUrl ??= BASE_URL;
+  }
 
-  factory Board.fromType(BoardType boardType, {BoardOverlay overlay, Map<String, List<BoardContent>> cachedBoardContents}) {
+  factory Board.fromType(BoardType boardType, {BoardOverlay overlay, Map<String, List<BoardContent>> cachedBoardContents, String baseUrl}) {
     BoardInfo boardInfo = boardsMap[boardType];
     if(boardInfo==null) {
       return Board('null', 0, null, null);
     } else {
-      return Board(boardInfo.path, boardInfo.numPositions, overlay, boardType, cachedBoardContents: cachedBoardContents,);
+      return Board(boardInfo.path, boardInfo.numPositions, overlay, boardType, cachedBoardContents: cachedBoardContents, baseUrl:baseUrl);
     }
   }
 
@@ -51,7 +56,7 @@ class BoardState extends State<Board> {
     if(_isLoading) {
       return Loading(insideContainer: true);
     } else {
-      return CrossPlatformStackedSvg.load(BASE_URL, widget.name, widget.numPositions, widget.overlay.positions, width:MediaQuery.of(context).size.width);
+      return CrossPlatformStackedSvg.load(widget.baseUrl, widget.name, widget.numPositions, widget.overlay.positions, width:MediaQuery.of(context).size.width);
     }
 
   }
@@ -69,13 +74,13 @@ class BoardState extends State<Board> {
   }
 
   String _overlayPath(int index) {
-    return '${BASE_URL}/board_svg/${widget.name}/overlays/${index}.svg';
+    return '${widget.baseUrl}/board_svg/${widget.name}/overlays/${index}.svg';
   }
 
   @override
   void didChangeDependencies() async {
     super.didChangeDependencies();
-    final String assetPath = '${BASE_URL}/board_svg/${widget.name}/board.svg';
+    final String assetPath = '${widget.baseUrl}/board_svg/${widget.name}/board.svg';
 
     if(kIsWeb) {
       Future.wait([
@@ -89,10 +94,19 @@ class BoardState extends State<Board> {
         });
       });
     } else {
-      Future.wait([
-        DefaultCacheManager().getSingleFile(assetPath),
-        ...List<Future>.generate(widget.numPositions, (i) => DefaultCacheManager().getSingleFile(_overlayPath(i+1)))
-      ]);
+
+      if(getProtocol(widget.baseUrl)=='gs') {
+        Future.wait([
+          FirebaseCacheManager().getSingleFile(firebasePath(assetPath)),
+          ...List<Future>.generate(widget.numPositions, (i) => FirebaseCacheManager().getSingleFile(firebasePath(_overlayPath(i+1))))
+        ]);
+      } else {
+        Future.wait([
+          DefaultCacheManager().getSingleFile(assetPath),
+          ...List<Future>.generate(widget.numPositions, (i) => DefaultCacheManager().getSingleFile(_overlayPath(i+1)))
+        ]);
+      }
+
       setState(() {
         _isLoading = false;
       });
