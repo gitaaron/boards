@@ -1,14 +1,12 @@
 library boards;
 
 import 'package:boards/models/board_info.dart';
+import 'package:boards/models/board_type.dart';
 import 'package:boards/models/hold.dart';
 import 'package:boards/types.dart';
 
-
-
 List<BoardInfo> boards = [
-
-  BoardInfo('Mönster', BoardType.MONSTER, 'monster', [
+  BoardInfo('Mönster', BoardType.fromEnum(UniqueBoardName.monster), [
     Hold(1, 30, HorizontalBoardLocation.LEFT),
     Hold(2, 25, HorizontalBoardLocation.LEFT),
     Hold(3, 30, HorizontalBoardLocation.RIGHT),
@@ -35,7 +33,8 @@ List<BoardInfo> boards = [
     Hold(24, 6, HorizontalBoardLocation.RIGHT),
     Hold(25, 5, HorizontalBoardLocation.RIGHT),
   ]),
-  BoardInfo('Beastmaker 2000', BoardType.BEASTMAKER_2000, 'beastmaker_2000', [
+  BoardInfo(
+    'Beastmaker 2000', BoardType.fromEnum(UniqueBoardName.beastmaker_2000), [
     Hold(1, 40, HorizontalBoardLocation.CENTER),
     Hold(2, 33, HorizontalBoardLocation.CENTER),
     Hold(3, 55, HorizontalBoardLocation.LEFT),
@@ -61,7 +60,4 @@ List<BoardInfo> boards = [
   ]),
 ];
 
-Map<BoardType, BoardInfo> boardsMap = {
-  BoardType.MONSTER:boards[0],
-  BoardType.BEASTMAKER_2000:boards[1],
-};
+

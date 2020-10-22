@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:boards/boards.dart';
+import 'package:boards/metadata/boards.dart';
 
 void main() {
   test('adds one to input values', () {

@@ -1,9 +1,11 @@
-import 'package:boards/boards.dart';
+import 'package:boards/metadata/boards.dart';
 import 'package:boards/components/board_provider.dart';
 import 'package:boards/components/cross_platform_svg.dart';
 import 'package:boards/helpers.dart';
 import 'package:boards/models/board_info.dart';
 import 'package:boards/models/board_overlay.dart';
+import 'package:boards/models/board_type.dart';
+import 'package:boards/models/boards_map.dart';
 import 'package:boards/types.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -27,11 +29,11 @@ class Board extends StatefulWidget {
   }
 
   factory Board.fromType(BoardType boardType, {BoardOverlay overlay, Map<String, List<BoardContent>> cachedBoardContents, String baseUrl}) {
-    BoardInfo boardInfo = boardsMap[boardType];
+    BoardInfo boardInfo = BoardsMap(boards).getInfo(boardType);
     if(boardInfo==null) {
       return Board('null', 0, null, null);
     } else {
-      return Board(boardInfo.path, boardInfo.numPositions, overlay, boardType, cachedBoardContents: cachedBoardContents, baseUrl:baseUrl);
+      return Board(boardInfo.type.uniqueName, boardInfo.numPositions, overlay, boardType, cachedBoardContents: cachedBoardContents, baseUrl:baseUrl);
     }
   }
 

@@ -1,11 +1,15 @@
 import 'package:boards/models/board_overlay.dart';
+import 'package:boards/models/board_type.dart';
 import 'package:boards/models/hold.dart';
 import 'package:boards/types.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'board_info.g.dart';
+
+@JsonSerializable(explicitToJson: true, anyMap: true)
 class BoardInfo {
   final String displayName;
   final BoardType type;
-  final String path;
   final List<Hold> holds;
   List<int> _edgesAvailable;
   Map<int, BoardOverlay> _edgeOverlayMap;
@@ -70,7 +74,7 @@ class BoardInfo {
 
   Map<int, BoardOverlay> get edgeOverlayMap { return _edgeOverlayMap; }
 
-  BoardInfo(this.displayName, this.type, this.path, this.holds) {
+  BoardInfo(this.displayName, this.type, this.holds) {
     _edgeOverlayMap = {};
     _edgesAvailable = [];
 
@@ -91,4 +95,7 @@ class BoardInfo {
     _edgesAvailable.sort();
 
   }
+
+  Map<String, dynamic> toJson() => _$BoardInfoToJson(this);
+  factory BoardInfo.fromJson(Map<String, dynamic> json) => _$BoardInfoFromJson(json);
 }
