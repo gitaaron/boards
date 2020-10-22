@@ -1,46 +1,46 @@
-import 'package:boards/metadata/boards.dart';
 import 'package:boards/components/board.dart';
 import 'package:boards/models/board_info.dart';
 import 'package:boards/models/board_type.dart';
-import 'package:boards/models/hand_positioning.dart';
-import 'package:boards/types.dart';
+import 'package:boards/models/boards_map.dart';
 import 'package:flutter/material.dart';
 import 'package:boards/models/board_overlay.dart';
 
-class BoardFormField extends FormField<BoardType> {
+class BoardFormField extends FormField<BoardInfo> {
+  final BoardsMap boardsMap;
 
   BoardFormField({
-    final Function(BoardType) onChanged,
+    this.boardsMap,
+    final Function(BoardInfo) onChanged,
     final Function() handPosition,
-    FormFieldSetter<BoardType> onSaved,
-    FormFieldValidator<BoardType> validator,
+    FormFieldSetter<BoardInfo> onSaved,
+    FormFieldValidator<BoardInfo> validator,
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     bool autovalidate = false,
     BuildContext context,
-    BoardType initialValue,
+    BoardInfo initialValue,
   }) : assert(context!=null), super(
     onSaved: onSaved,
     validator: validator,
     initialValue: initialValue,
-    builder: (FormFieldState<BoardType> state) {
-      BoardType boardType = state.value;
+    builder: (FormFieldState<BoardInfo> state) {
+      BoardInfo boardInfo = state.value;
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           DropdownButtonHideUnderline(
             child: ButtonTheme(
               alignedDropdown: true,
-              child: DropdownButton<BoardType>(
-                value:boardType,
+              child: DropdownButton<BoardInfo>(
+                value:boardInfo,
                 hint:Text('Select a board'),
-                onChanged:(BoardType value) {
+                onChanged:(BoardInfo value) {
                   state.reset();
                   state.didChange(value);
                   if(onChanged!=null) onChanged(value);
                 },
-                items:boards.map<DropdownMenuItem<BoardType>>((BoardInfo value) {
-                  return DropdownMenuItem<BoardType>(
-                    value:value.type,
+                items:boardsMap.boards.map<DropdownMenuItem<BoardInfo>>((BoardInfo value) {
+                  return DropdownMenuItem<BoardInfo>(
+                    value:value,
                     child:Text('${value.displayName}'),
                   );
                 }).toList(),
@@ -48,8 +48,8 @@ class BoardFormField extends FormField<BoardType> {
             ),
           ),
           Visibility(
-            visible:boardType!=null,
-            child:Board.fromType(boardType, overlay:BoardOverlay.fromHandPositioning(handPosition()))
+            visible:boardInfo!=null,
+            child:Board.fromType(boardInfo.type, overlay:BoardOverlay.fromHandPositioning(handPosition()))
           ),
           state.hasError?
           Text(

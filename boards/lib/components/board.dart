@@ -1,3 +1,4 @@
+import 'package:boards/constants.dart';
 import 'package:boards/metadata/boards.dart';
 import 'package:boards/components/board_provider.dart';
 import 'package:boards/components/cross_platform_svg.dart';
@@ -14,7 +15,7 @@ import 'package:flutter_cache_manager_firebase/flutter_cache_manager_firebase.da
 import 'package:loading/loading.dart';
 import 'package:boards/models/board_content.dart';
 
-final String BASE_URL = 'https://raw.githubusercontent.com/gitaaron/boards/main/boards';
+
 
 class Board extends StatefulWidget {
   String name;

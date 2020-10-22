@@ -60,4 +60,3 @@ List<BoardInfo> boards = [
   ]),
 ];
 
-
