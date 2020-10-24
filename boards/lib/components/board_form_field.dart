@@ -8,8 +8,9 @@ import 'package:boards/models/board_overlay.dart';
 class BoardFormField extends FormField<BoardInfo> {
   final BoardsMap boardsMap;
 
-  BoardFormField({
+  BoardFormField(
     this.boardsMap,
+    {
     final Function(BoardInfo) onChanged,
     final Function() handPosition,
     FormFieldSetter<BoardInfo> onSaved,
@@ -49,7 +50,7 @@ class BoardFormField extends FormField<BoardInfo> {
           ),
           Visibility(
             visible:boardInfo!=null,
-            child:Board.fromType(boardInfo.type, overlay:BoardOverlay.fromHandPositioning(handPosition()))
+            child:boardInfo!=null?Board.fromType(boardInfo.type, overlay:BoardOverlay.fromHandPositioning(handPosition())):Container(),
           ),
           state.hasError?
           Text(
