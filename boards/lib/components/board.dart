@@ -59,7 +59,7 @@ class BoardState extends State<Board> {
     if(_isLoading) {
       return Loading(insideContainer: true);
     } else {
-      return CrossPlatformStackedSvg.load(widget.baseUrl, widget.name, widget.numPositions, widget.overlay.positions, width:MediaQuery.of(context).size.width);
+      return CrossPlatformStackedSvg.load(widget.baseUrl, widget.name, widget.numPositions, widget.overlay?.positions??[], width:MediaQuery.of(context).size.width);
     }
 
   }
