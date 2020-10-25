@@ -11,6 +11,7 @@ class BoardInfo {
   final String displayName;
   final BoardType type;
   final List<Hold> holds;
+  final String homePage;
   List<int> _edgesAvailable;
   Map<int, BoardOverlay> _edgeOverlayMap;
   int _positionCount = 0;
@@ -74,7 +75,7 @@ class BoardInfo {
 
   Map<int, BoardOverlay> get edgeOverlayMap { return _edgeOverlayMap; }
 
-  BoardInfo(this.displayName, this.type, this.holds) {
+  BoardInfo(this.displayName, this.type, this.homePage, this.holds) {
     _edgeOverlayMap = {};
     _edgesAvailable = [];
 

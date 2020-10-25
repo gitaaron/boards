@@ -14,6 +14,7 @@ BoardInfo _$BoardInfoFromJson(Map json) {
           : BoardType.fromJson((json['type'] as Map)?.map(
               (k, e) => MapEntry(k as String, e),
             )),
+      json['homePage'] as String,
       (json['holds'] as List)
           ?.map((e) => e == null
               ? null
@@ -26,5 +27,6 @@ BoardInfo _$BoardInfoFromJson(Map json) {
 Map<String, dynamic> _$BoardInfoToJson(BoardInfo instance) => <String, dynamic>{
       'displayName': instance.displayName,
       'type': instance.type?.toJson(),
-      'holds': instance.holds?.map((e) => e?.toJson())?.toList()
+      'holds': instance.holds?.map((e) => e?.toJson())?.toList(),
+      'homePage': instance.homePage
     };

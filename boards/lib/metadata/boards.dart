@@ -6,7 +6,7 @@ import 'package:boards/models/hold.dart';
 import 'package:boards/types.dart';
 
 List<BoardInfo> boards = [
-  BoardInfo('Mönster', BoardType.fromEnum(UniqueBoardName.monster), [
+  BoardInfo('Mönster', BoardType.fromEnum(UniqueBoardName.monster), 'https://holdemporium.com/collections/training/products/monster-board', [
     Hold(1, 30, HorizontalBoardLocation.LEFT),
     Hold(2, 25, HorizontalBoardLocation.LEFT),
     Hold(3, 30, HorizontalBoardLocation.RIGHT),
@@ -34,7 +34,7 @@ List<BoardInfo> boards = [
     Hold(25, 5, HorizontalBoardLocation.RIGHT),
   ]),
   BoardInfo(
-    'Beastmaker 2000', BoardType.fromEnum(UniqueBoardName.beastmaker_2000), [
+    'Beastmaker 2000', BoardType.fromEnum(UniqueBoardName.beastmaker_2000), 'https://www.beastmaker.co.uk/products/beastmaker-2000-series', [
     Hold(1, 40, HorizontalBoardLocation.CENTER),
     Hold(2, 33, HorizontalBoardLocation.CENTER),
     Hold(3, 55, HorizontalBoardLocation.LEFT),
