@@ -1,17 +1,11 @@
 import 'package:boards/constants.dart';
-import 'package:boards/metadata/boards.dart';
 import 'package:boards/components/board_provider.dart';
 import 'package:boards/components/cross_platform_svg.dart';
-import 'package:boards/helpers.dart';
 import 'package:boards/models/board_info.dart';
 import 'package:boards/models/board_overlay.dart';
 import 'package:boards/models/board_type.dart';
-import 'package:boards/models/boards_map.dart';
-import 'package:boards/types.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:flutter_cache_manager_firebase/flutter_cache_manager_firebase.dart';
 import 'package:loading/loading.dart';
 import 'package:boards/models/board_content.dart';
 
@@ -21,20 +15,18 @@ class Board extends StatefulWidget {
   String name;
   int numPositions;
   BoardOverlay overlay;
-  BoardType type;
   String baseUrl;
   Map<String, List<BoardContent>> cachedBoardContents;
 
-  Board(this.name, this.numPositions, this.overlay, this.type, {this.cachedBoardContents, this.baseUrl}) {
+  Board(this.name, this.numPositions, this.overlay, {this.cachedBoardContents, this.baseUrl}) {
     baseUrl ??= BASE_URL;
   }
 
-  factory Board.fromType(BoardType boardType, {BoardOverlay overlay, Map<String, List<BoardContent>> cachedBoardContents, String baseUrl}) {
-    BoardInfo boardInfo = BoardsMap(boards).getInfo(boardType);
+  factory Board.fromInfo(BoardInfo boardInfo, {BoardOverlay overlay, Map<String, List<BoardContent>> cachedBoardContents, String baseUrl}) {
     if(boardInfo==null) {
-      return Board('null', 0, null, null);
+      return Board('null', 0, null);
     } else {
-      return Board(boardInfo.type.uniqueName, boardInfo.numPositions, overlay, boardType, cachedBoardContents: cachedBoardContents, baseUrl:baseUrl);
+      return Board(boardInfo.type.uniqueName, boardInfo.numPositions, overlay, cachedBoardContents: cachedBoardContents, baseUrl:baseUrl);
     }
   }
 
@@ -66,7 +58,7 @@ class BoardState extends State<Board> {
 
   @override
   Widget build(BuildContext context) {
-    if(widget.type==null) {
+    if(widget.name==null) {
       return Container();
     } else {
       return BoardProvider(

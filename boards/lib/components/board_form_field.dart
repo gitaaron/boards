@@ -50,7 +50,7 @@ class BoardFormField extends FormField<BoardInfo> {
           ),
           Visibility(
             visible:boardInfo!=null,
-            child:boardInfo!=null?Board.fromType(boardInfo.type, overlay:BoardOverlay.fromHandPositioning(handPosition())):Container(),
+            child:boardInfo!=null?Board.fromInfo(boardInfo, overlay:BoardOverlay.fromHandPositioning(handPosition())):Container(),
           ),
           state.hasError?
           Text(

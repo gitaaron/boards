@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'board_type.g.dart';
 
+
 @JsonSerializable(explicitToJson: true, anyMap: true)
 class BoardType {
   final String uniqueName;
