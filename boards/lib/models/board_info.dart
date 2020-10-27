@@ -13,6 +13,8 @@ class BoardInfo {
   final List<Hold> holds;
   final String homePage;
   List<int> _edgesAvailable;
+  List<int> _edgesAvailableForLeft;
+  List<int> _edgesAvailableForRight;
   Map<int, BoardOverlay> _edgeOverlayMap;
   int _positionCount = 0;
   Map _positions = {};
@@ -27,6 +29,23 @@ class BoardInfo {
 
   List<int> get edgesAvailable {
     return _edgesAvailable;
+  }
+
+  List<int> edgesAvailableForSide(HorizontalBoardLocation side) {
+    switch(side) {
+      case(HorizontalBoardLocation.LEFT) : {
+        return _edgesAvailableForLeft;
+      }
+      break;
+      case(HorizontalBoardLocation.RIGHT) : {
+        return _edgesAvailableForRight;
+      }
+      break;
+      default : {
+        throw UnimplementedError('edges available not calculated for side ${side}');
+      }
+      break;
+    }
   }
 
   int get easiestEdge {
@@ -78,6 +97,8 @@ class BoardInfo {
   BoardInfo(this.displayName, this.type, this.homePage, this.holds) {
     _edgeOverlayMap = {};
     _edgesAvailable = [];
+    _edgesAvailableForLeft = [];
+    _edgesAvailableForRight = [];
 
     holds.forEach((Hold hold) {
       if(!(_positions[hold.position] ?? false)) {
@@ -85,6 +106,9 @@ class BoardInfo {
         _positions[hold.position] = true;
       }
       if(!_edgesAvailable.contains(hold.edge)) _edgesAvailable.add(hold.edge);
+      if(!_edgesAvailableForLeft.contains(hold.edge) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.LEFT)) _edgesAvailableForLeft.add(hold.edge);
+      if(!_edgesAvailableForRight.contains(hold.edge) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.RIGHT)) _edgesAvailableForRight.add(hold.edge);
+
       if(_edgeOverlayMap[hold.edge]==null) {
         _edgeOverlayMap[hold.edge] = BoardOverlay([hold.position]);
       } else {
@@ -94,6 +118,8 @@ class BoardInfo {
     });
 
     _edgesAvailable.sort();
+    _edgesAvailableForLeft.sort();
+    _edgesAvailableForRight.sort();
 
   }
 
