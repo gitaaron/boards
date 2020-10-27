@@ -7,18 +7,20 @@ import 'package:boards/models/board_overlay.dart';
 
 class BoardFormField extends FormField<BoardInfo> {
   final BoardsMap boardsMap;
+  final Widget action;
 
   BoardFormField(
     this.boardsMap,
     {
-    final Function(BoardInfo) onChanged,
-    final Function() handPosition,
-    FormFieldSetter<BoardInfo> onSaved,
-    FormFieldValidator<BoardInfo> validator,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
-    bool autovalidate = false,
-    BuildContext context,
-    BoardInfo initialValue,
+      final this.action,
+      final Function(BoardInfo) onChanged,
+      final Function() handPosition,
+      FormFieldSetter<BoardInfo> onSaved,
+      FormFieldValidator<BoardInfo> validator,
+      AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
+      bool autovalidate = false,
+      BuildContext context,
+      BoardInfo initialValue,
   }) : assert(context!=null), super(
     onSaved: onSaved,
     validator: validator,
@@ -28,25 +30,30 @@ class BoardFormField extends FormField<BoardInfo> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          DropdownButtonHideUnderline(
-            child: ButtonTheme(
-              alignedDropdown: true,
-              child: DropdownButton<BoardInfo>(
-                value:boardInfo,
-                hint:Text('Select a board'),
-                onChanged:(BoardInfo value) {
-                  state.reset();
-                  state.didChange(value);
-                  if(onChanged!=null) onChanged(value);
-                },
-                items:boardsMap.boards.map<DropdownMenuItem<BoardInfo>>((BoardInfo value) {
-                  return DropdownMenuItem<BoardInfo>(
-                    value:value,
-                    child:Text('${value.displayName}'),
-                  );
-                }).toList(),
+          Row(
+            children: [
+              DropdownButtonHideUnderline(
+                child: ButtonTheme(
+                  alignedDropdown: true,
+                  child: DropdownButton<BoardInfo>(
+                    value:boardInfo,
+                    hint:Text('Select a board'),
+                    onChanged:(BoardInfo value) {
+                      state.reset();
+                      state.didChange(value);
+                      if(onChanged!=null) onChanged(value);
+                    },
+                    items:boardsMap.boards.map<DropdownMenuItem<BoardInfo>>((BoardInfo value) {
+                      return DropdownMenuItem<BoardInfo>(
+                        value:value,
+                        child:Text('${value.displayName}'),
+                      );
+                    }).toList(),
+                  ),
+                ),
               ),
-            ),
+              action!=null&&false?Expanded(child: Align(alignment:Alignment.centerRight, child: action)):Container(),
+            ],
           ),
           Visibility(
             visible:boardInfo!=null,
