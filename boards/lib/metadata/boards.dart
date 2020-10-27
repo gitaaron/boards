@@ -35,11 +35,10 @@ List<BoardInfo> boards = [
   ]),
   BoardInfo(
     'Beastmaker 2000', BoardType.fromEnum(UniqueBoardName.beastmaker_2000), 'https://www.beastmaker.co.uk/products/beastmaker-2000-series', [
-    Hold(1, 40, HorizontalBoardLocation.CENTER),
-    Hold(2, 33, HorizontalBoardLocation.CENTER),
+    Hold(1, 40, HorizontalBoardLocation.LEFT),
+    Hold(2, 33, HorizontalBoardLocation.LEFT),
     Hold(3, 55, HorizontalBoardLocation.LEFT),
     Hold(4, 35, HorizontalBoardLocation.LEFT),
-    Hold(4, 50, HorizontalBoardLocation.LEFT),
     Hold(5, 30, HorizontalBoardLocation.LEFT),
     Hold(6, 15, HorizontalBoardLocation.LEFT),
     Hold(7, 27, HorizontalBoardLocation.LEFT),
@@ -50,13 +49,14 @@ List<BoardInfo> boards = [
     Hold(12, 20, HorizontalBoardLocation.RIGHT),
     Hold(13, 30, HorizontalBoardLocation.RIGHT),
     Hold(14, 35, HorizontalBoardLocation.RIGHT),
-    Hold(14, 50, HorizontalBoardLocation.RIGHT),
     Hold(15, 55, HorizontalBoardLocation.RIGHT),
     Hold(16, 33, HorizontalBoardLocation.RIGHT),
     Hold(17, 22, HorizontalBoardLocation.RIGHT),
     Hold(18, 20, HorizontalBoardLocation.RIGHT),
     Hold(19, 27, HorizontalBoardLocation.RIGHT),
     Hold(20, 15, HorizontalBoardLocation.RIGHT),
+    Hold(21, 50, HorizontalBoardLocation.LEFT),
+    Hold(22, 50, HorizontalBoardLocation.RIGHT),
   ]),
 ];
 
