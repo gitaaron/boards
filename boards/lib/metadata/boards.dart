@@ -34,6 +34,27 @@ List<BoardInfo> boards = [
     Hold(25, 5, 25, HorizontalBoardLocation.RIGHT),
   ]),
   BoardInfo(
+    'Beastmaker 1000', BoardType.fromEnum(UniqueBoardName.beastmaker_1000), 'https://www.beastmaker.co.uk/products/beastmaker-1000-series', [
+    Hold(1, 15, 1, HorizontalBoardLocation.LEFT),
+    Hold(2, 30, 2, HorizontalBoardLocation.LEFT),
+    Hold(3, 45, 3, HorizontalBoardLocation.LEFT),
+    Hold(4, 50, 4, HorizontalBoardLocation.LEFT),
+    Hold(5, 44, 5, HorizontalBoardLocation.LEFT),
+    Hold(6, 52, 6, HorizontalBoardLocation.CENTER),
+    Hold(7, 20, 7, HorizontalBoardLocation.LEFT),
+    Hold(8, 25, 8, HorizontalBoardLocation.LEFT),
+    Hold(9, 20, 9, HorizontalBoardLocation.LEFT),
+    Hold(10, 30, 10, HorizontalBoardLocation.RIGHT),
+    Hold(11, 15, 11, HorizontalBoardLocation.RIGHT),
+    Hold(12, 44, 12, HorizontalBoardLocation.RIGHT),
+    Hold(13, 50, 13, HorizontalBoardLocation.RIGHT),
+    Hold(14, 45, 14, HorizontalBoardLocation.RIGHT),
+    Hold(15, 20, 15, HorizontalBoardLocation.RIGHT),
+    Hold(16, 25, 16, HorizontalBoardLocation.RIGHT),
+    Hold(17, 20, 17, HorizontalBoardLocation.RIGHT),
+  ]
+  ),
+  BoardInfo(
     'Beastmaker 2000', BoardType.fromEnum(UniqueBoardName.beastmaker_2000), 'https://www.beastmaker.co.uk/products/beastmaker-2000-series', [
     Hold(1, 40, 1, HorizontalBoardLocation.LEFT),
     Hold(2, 33, 2, HorizontalBoardLocation.LEFT),
@@ -59,27 +80,6 @@ List<BoardInfo> boards = [
     Hold(22, 50, 22, HorizontalBoardLocation.RIGHT),
   ]),
   BoardInfo(
-    'Beastmaker 1000', BoardType.fromEnum(UniqueBoardName.beastmaker_1000), 'https://www.beastmaker.co.uk/products/beastmaker-1000-series', [
-      Hold(1, 15, 1, HorizontalBoardLocation.LEFT),
-      Hold(2, 30, 2, HorizontalBoardLocation.LEFT),
-      Hold(3, 45, 3, HorizontalBoardLocation.LEFT),
-      Hold(4, 50, 4, HorizontalBoardLocation.LEFT),
-      Hold(5, 44, 5, HorizontalBoardLocation.LEFT),
-      Hold(6, 52, 6, HorizontalBoardLocation.CENTER),
-      Hold(7, 20, 7, HorizontalBoardLocation.LEFT),
-      Hold(8, 25, 8, HorizontalBoardLocation.LEFT),
-      Hold(9, 20, 9, HorizontalBoardLocation.LEFT),
-      Hold(10, 30, 10, HorizontalBoardLocation.RIGHT),
-      Hold(11, 15, 11, HorizontalBoardLocation.RIGHT),
-      Hold(12, 44, 12, HorizontalBoardLocation.RIGHT),
-      Hold(13, 50, 13, HorizontalBoardLocation.RIGHT),
-      Hold(14, 45, 14, HorizontalBoardLocation.RIGHT),
-      Hold(15, 20, 15, HorizontalBoardLocation.RIGHT),
-      Hold(16, 25, 16, HorizontalBoardLocation.RIGHT),
-      Hold(17, 20, 17, HorizontalBoardLocation.RIGHT),
-  ]
-  ),
-  BoardInfo(
     'Metolius Project', BoardType.fromEnum(UniqueBoardName.metolius_project), 'https://www.metoliusclimbing.com/project-board.html', [
       Hold(1, 45, 1, HorizontalBoardLocation.LEFT),
       Hold(2, 30, 2, HorizontalBoardLocation.LEFT),
@@ -94,7 +94,15 @@ List<BoardInfo> boards = [
       Hold(11, 39, 6, HorizontalBoardLocation.CENTER),
       Hold(12, 16, 7, HorizontalBoardLocation.CENTER),
   ]
-  )
-
+  ),
+  BoardInfo(
+    'Metolius Prime Rib', BoardType.fromEnum(UniqueBoardName.metolius_prime_rib), 'https://www.metoliusclimbing.com/prime-rib.html', [
+    Hold(1, 38, 1, HorizontalBoardLocation.LEFT),
+    Hold(2, 38, 2, HorizontalBoardLocation.RIGHT),
+    Hold(3, 23, 3, HorizontalBoardLocation.LEFT),
+    Hold(4, 23, 4, HorizontalBoardLocation.RIGHT),
+    Hold(5, 15, 5, HorizontalBoardLocation.LEFT),
+    Hold(6, 15, 6, HorizontalBoardLocation.RIGHT),
+  ]
+  ),
 ];
-

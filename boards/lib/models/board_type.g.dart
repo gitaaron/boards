@@ -47,5 +47,6 @@ const _$UniqueBoardNameEnumMap = <UniqueBoardName, dynamic>{
   UniqueBoardName.monster: 'monster',
   UniqueBoardName.beastmaker_1000: 'beastmaker_1000',
   UniqueBoardName.beastmaker_2000: 'beastmaker_2000',
-  UniqueBoardName.metolius_project: 'metolius_project'
+  UniqueBoardName.metolius_project: 'metolius_project',
+  UniqueBoardName.metolius_prime_rib: 'metolius_prime_rib'
 };
