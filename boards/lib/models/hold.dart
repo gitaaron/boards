@@ -7,8 +7,9 @@ part 'hold.g.dart';
 class Hold {
   final int position;
   final int edge;
+  final int order;
   final HorizontalBoardLocation location;
-  Hold(this.position, this.edge, this.location);
+  Hold(this.order, this.edge, this.position, this.location);
 
   Map<String, dynamic> toJson() => _$HoldToJson(this);
   factory Hold.fromJson(Map<String, dynamic> json) => _$HoldFromJson(json);

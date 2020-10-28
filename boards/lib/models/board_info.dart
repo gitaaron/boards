@@ -1,3 +1,4 @@
+import 'package:boards/constants.dart';
 import 'package:boards/models/board_overlay.dart';
 import 'package:boards/models/board_type.dart';
 import 'package:boards/models/hold.dart';
@@ -8,13 +9,14 @@ part 'board_info.g.dart';
 
 @JsonSerializable(explicitToJson: true, anyMap: true)
 class BoardInfo {
+  int version = CURRENT_VERSION;
   final String displayName;
   final BoardType type;
   final List<Hold> holds;
   final String homePage;
   List<int> _edgesAvailable;
-  List<int> _edgesAvailableForLeft;
-  List<int> _edgesAvailableForRight;
+  List<Hold> _holdsAvailableForLeft;
+  List<Hold> _holdsAvailableForRight;
   Map<int, BoardOverlay> _edgeOverlayMap;
   int _positionCount = 0;
   Map _positions = {};
@@ -31,14 +33,14 @@ class BoardInfo {
     return _edgesAvailable;
   }
 
-  List<int> edgesAvailableForSide(HorizontalBoardLocation side) {
+  List<Hold> holdsAvailableForSide(HorizontalBoardLocation side) {
     switch(side) {
       case(HorizontalBoardLocation.LEFT) : {
-        return _edgesAvailableForLeft;
+        return _holdsAvailableForLeft;
       }
       break;
       case(HorizontalBoardLocation.RIGHT) : {
-        return _edgesAvailableForRight;
+        return _holdsAvailableForRight;
       }
       break;
       default : {
@@ -73,32 +75,41 @@ class BoardInfo {
     return edge;
   }
 
-  int positionFromEdge(int edge, HorizontalBoardLocation location) {
-    int position;
-    int centerPosition;
 
-    holds.forEach((Hold hold) {
-      if(hold.edge==edge && hold.location==location) {
-        position = hold.position;
+  Hold holdFromEdge(int edge, HorizontalBoardLocation location) {
+    Hold hold;
+    Hold centerHold;
+    holds.forEach((Hold holdToTest) {
+      if(holdToTest.edge==edge && holdToTest.location==location) {
+        hold = holdToTest;
       }
 
-      if(hold.edge==edge && hold.location==HorizontalBoardLocation.CENTER) {
-        centerPosition = hold.position;
+      if(holdToTest.edge==edge && holdToTest.location==HorizontalBoardLocation.CENTER) {
+        centerHold = holdToTest;
       }
 
     });
 
-    return position ?? centerPosition;
+    return hold ?? centerHold;
 
+  }
+
+  int positionFromEdge(int edge, HorizontalBoardLocation location) {
+    return holdFromEdge(edge, location).position;
   }
 
   Map<int, BoardOverlay> get edgeOverlayMap { return _edgeOverlayMap; }
 
+  int compareHold(Hold a, Hold b) {
+    if(a.order<b.order) return -1;
+    return 1;
+  }
+
   BoardInfo(this.displayName, this.type, this.homePage, this.holds) {
     _edgeOverlayMap = {};
     _edgesAvailable = [];
-    _edgesAvailableForLeft = [];
-    _edgesAvailableForRight = [];
+    _holdsAvailableForLeft = [];
+    _holdsAvailableForRight = [];
 
     holds.forEach((Hold hold) {
       if(!(_positions[hold.position] ?? false)) {
@@ -106,8 +117,8 @@ class BoardInfo {
         _positions[hold.position] = true;
       }
       if(!_edgesAvailable.contains(hold.edge)) _edgesAvailable.add(hold.edge);
-      if(!_edgesAvailableForLeft.contains(hold.edge) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.LEFT)) _edgesAvailableForLeft.add(hold.edge);
-      if(!_edgesAvailableForRight.contains(hold.edge) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.RIGHT)) _edgesAvailableForRight.add(hold.edge);
+      if(!_holdsAvailableForLeft.contains(hold) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.LEFT)) _holdsAvailableForLeft.add(hold);
+      if(!_holdsAvailableForRight.contains(hold) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.RIGHT)) _holdsAvailableForRight.add(hold);
 
       if(_edgeOverlayMap[hold.edge]==null) {
         _edgeOverlayMap[hold.edge] = BoardOverlay([hold.position]);
@@ -118,8 +129,8 @@ class BoardInfo {
     });
 
     _edgesAvailable.sort();
-    _edgesAvailableForLeft.sort();
-    _edgesAvailableForRight.sort();
+    _holdsAvailableForLeft.sort(compareHold);
+    _holdsAvailableForRight.sort(compareHold);
 
   }
 

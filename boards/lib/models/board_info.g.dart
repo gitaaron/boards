@@ -21,10 +21,12 @@ BoardInfo _$BoardInfoFromJson(Map json) {
               : Hold.fromJson((e as Map)?.map(
                   (k, e) => MapEntry(k as String, e),
                 )))
-          ?.toList());
+          ?.toList())
+    ..version = json['version'] as int;
 }
 
 Map<String, dynamic> _$BoardInfoToJson(BoardInfo instance) => <String, dynamic>{
+      'version': instance.version,
       'displayName': instance.displayName,
       'type': instance.type?.toJson(),
       'holds': instance.holds?.map((e) => e?.toJson())?.toList(),

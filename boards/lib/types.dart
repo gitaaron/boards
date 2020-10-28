@@ -1,3 +1,3 @@
 enum HoldType { EDGE, PINCH, SLOPER }
 enum HorizontalBoardLocation { LEFT, RIGHT, CENTER}
-enum UniqueBoardName { monster, beastmaker_2000 }
+enum UniqueBoardName { monster, beastmaker_1000, beastmaker_2000, metolius_project }

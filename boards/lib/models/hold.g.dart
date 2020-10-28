@@ -7,13 +7,17 @@ part of 'hold.dart';
 // **************************************************************************
 
 Hold _$HoldFromJson(Map json) {
-  return Hold(json['position'] as int, json['edge'] as int,
+  return Hold(
+      json['order'] as int,
+      json['edge'] as int,
+      json['position'] as int,
       _$enumDecodeNullable(_$HorizontalBoardLocationEnumMap, json['location']));
 }
 
 Map<String, dynamic> _$HoldToJson(Hold instance) => <String, dynamic>{
       'position': instance.position,
       'edge': instance.edge,
+      'order': instance.order,
       'location': _$HorizontalBoardLocationEnumMap[instance.location]
     };
 
