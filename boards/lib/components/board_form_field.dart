@@ -37,7 +37,6 @@ class BoardFormField extends FormField<BoardInfo> {
             children: [
               DropdownButtonHideUnderline(
                 child: ButtonTheme(
-                  alignedDropdown: true,
                   child: DropdownButton<BoardInfo>(
                     value:boardInfo,
                     hint:Text('Select a board'),
