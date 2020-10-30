@@ -29,6 +29,7 @@ class BoardFormField extends FormField<BoardInfo> {
     initialValue: initialValue,
     builder: (FormFieldState<BoardInfo> state) {
       BoardInfo boardInfo = state.value;
+
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -54,7 +55,7 @@ class BoardFormField extends FormField<BoardInfo> {
                   ),
                 ),
               ),
-              action!=null&&false?Expanded(child: Align(alignment:Alignment.centerRight, child: action)):Container(),
+              action!=null?Expanded(child: Align(alignment:Alignment.centerRight, child: action)):Container(),
             ],
           ),
           Visibility(
