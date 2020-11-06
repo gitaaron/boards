@@ -9,12 +9,14 @@ class BoardFormField extends FormField<BoardInfo> {
   final BoardsMap boardsMap;
   final Widget action;
   final String baseUrl;
+  final bool isRequired;
 
   BoardFormField(
     this.boardsMap,
     {
       this.action,
       this.baseUrl,
+      this.isRequired = false,
       final Function(BoardInfo) onChanged,
       final Function() handPosition,
       FormFieldSetter<BoardInfo> onSaved,
@@ -39,7 +41,13 @@ class BoardFormField extends FormField<BoardInfo> {
                 child: ButtonTheme(
                   child: DropdownButton<BoardInfo>(
                     value:boardInfo,
-                    hint:Text('Select a board'),
+                    hint:Row(
+                      children: [
+                        Text('Select a board'),
+                        SizedBox(width:5.0),
+                        Text(isRequired?'(required)':'(optional)', style:Theme.of(context).textTheme.caption),
+                      ],
+                    ),
                     onChanged:(BoardInfo value) {
                       state.reset();
                       state.didChange(value);
