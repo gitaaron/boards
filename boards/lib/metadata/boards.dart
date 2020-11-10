@@ -67,19 +67,23 @@ List<BoardInfo> boards = [
     Hold(7, 27, 7, HorizontalBoardLocation.LEFT),
     Hold(8, 20, 8, HorizontalBoardLocation.LEFT),
     Hold(9, 22, 9, HorizontalBoardLocation.LEFT),
-    Hold(10, 52, 10, HorizontalBoardLocation.CENTER),
-    Hold(11, 21, 11, HorizontalBoardLocation.CENTER),
-    Hold(12, 20, 12, HorizontalBoardLocation.RIGHT),
-    Hold(13, 30, 13, HorizontalBoardLocation.RIGHT),
+    Hold(10, 50, 21, HorizontalBoardLocation.LEFT),
+
+
+    Hold(11, 20, 12, HorizontalBoardLocation.RIGHT),
+    Hold(12, 33, 16, HorizontalBoardLocation.RIGHT),
+    Hold(13, 55, 15, HorizontalBoardLocation.RIGHT),
     Hold(14, 35, 14, HorizontalBoardLocation.RIGHT),
-    Hold(15, 55, 15, HorizontalBoardLocation.RIGHT),
-    Hold(16, 33, 16, HorizontalBoardLocation.RIGHT),
-    Hold(17, 22, 17, HorizontalBoardLocation.RIGHT),
+    Hold(15, 30, 13, HorizontalBoardLocation.RIGHT),
+    Hold(16, 15, 20, HorizontalBoardLocation.RIGHT),
+    Hold(17, 27, 19, HorizontalBoardLocation.RIGHT),
     Hold(18, 20, 18, HorizontalBoardLocation.RIGHT),
-    Hold(19, 27, 19, HorizontalBoardLocation.RIGHT),
-    Hold(20, 15, 20, HorizontalBoardLocation.RIGHT),
-    Hold(21, 50, 21, HorizontalBoardLocation.LEFT),
-    Hold(22, 50, 22, HorizontalBoardLocation.RIGHT),
+    Hold(19, 22, 17, HorizontalBoardLocation.RIGHT),
+    Hold(20, 50, 22, HorizontalBoardLocation.RIGHT),
+
+    Hold(21, 52, 10, HorizontalBoardLocation.CENTER),
+    Hold(22, 21, 11, HorizontalBoardLocation.CENTER),
+
   ]),
   BoardInfo(
     'Metolius Project', BoardType.fromEnum(UniqueBoardName.metolius_project), 'https://www.metoliusclimbing.com/project-board.html', [
