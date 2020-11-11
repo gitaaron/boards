@@ -3,8 +3,8 @@
     <title>board</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="board" transform="translate(1.640985, 1.000000)" fill="#979797" stroke="#979797">
-            <g id="right" transform="translate(1053.359015, 79.000000)">
-                <rect id="9" transform="translate(48.500000, 111.500000) scale(-1, 1) translate(-48.500000, -111.500000) " x="0.5" y="86.5" width="96" height="50" rx="22"></rect>
+            <g id="top" transform="translate(0.000000, -0.000000)">
+                <path d="M278.675421,64.5855744 L250.339484,149.864148 L522.359015,131.224883 L540.1305,50.015625 C475.999832,52.3152538 427.643061,54.4545767 395.060187,56.4335938 C362.477313,58.4126108 323.682391,61.1299377 278.675421,64.5855744 Z" id="14" stroke="#979797"></path>
             </g>
         </g>
     </g>

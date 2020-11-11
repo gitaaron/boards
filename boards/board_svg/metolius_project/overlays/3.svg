@@ -3,8 +3,8 @@
     <title>board</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="board" transform="translate(1.640985, 1.000000)" fill="#979797" stroke="#979797">
-            <g id="left" transform="translate(42.394647, 58.360735)">
-                <rect id="3" x="332.464368" y="105.139265" width="96" height="50" rx="22"></rect>
+            <g id="left" transform="translate(48.394647, 78.360735)">
+                <rect id="3" x="326.464368" y="87.1392651" width="96" height="50" rx="22"></rect>
             </g>
         </g>
     </g>
