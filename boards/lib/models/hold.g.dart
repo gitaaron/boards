@@ -8,17 +8,19 @@ part of 'hold.dart';
 
 Hold _$HoldFromJson(Map json) {
   return Hold(
+      _$enumDecodeNullable(_$HoldTypeEnumMap, json['type']),
       json['order'] as int,
-      json['edge'] as int,
+      json['depth'] as int,
       json['position'] as int,
       _$enumDecodeNullable(_$HorizontalBoardLocationEnumMap, json['location']));
 }
 
 Map<String, dynamic> _$HoldToJson(Hold instance) => <String, dynamic>{
       'position': instance.position,
-      'edge': instance.edge,
+      'depth': instance.depth,
       'order': instance.order,
-      'location': _$HorizontalBoardLocationEnumMap[instance.location]
+      'location': _$HorizontalBoardLocationEnumMap[instance.location],
+      'type': _$HoldTypeEnumMap[instance.type]
     };
 
 T _$enumDecode<T>(Map<T, dynamic> enumValues, dynamic source) {
@@ -40,6 +42,13 @@ T _$enumDecodeNullable<T>(Map<T, dynamic> enumValues, dynamic source) {
   }
   return _$enumDecode<T>(enumValues, source);
 }
+
+const _$HoldTypeEnumMap = <HoldType, dynamic>{
+  HoldType.EDGE: 'EDGE',
+  HoldType.PINCH: 'PINCH',
+  HoldType.SLOPER: 'SLOPER',
+  HoldType.JUG: 'JUG'
+};
 
 const _$HorizontalBoardLocationEnumMap = <HorizontalBoardLocation, dynamic>{
   HorizontalBoardLocation.LEFT: 'LEFT',

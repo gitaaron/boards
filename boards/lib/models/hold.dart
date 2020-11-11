@@ -6,10 +6,26 @@ part 'hold.g.dart';
 @JsonSerializable(explicitToJson: true, anyMap: true)
 class Hold {
   final int position;
-  final int edge;
+  final int depth;
   final int order;
   final HorizontalBoardLocation location;
-  Hold(this.order, this.edge, this.position, this.location);
+  final HoldType type;
+
+  Hold(this.type, this.order, this.depth, this.position, this.location, ) : assert(
+    type!=HoldType.EDGE || depth!=null
+  );
+
+  String get typeAsString {
+    return type.toString().split('.')[1];
+  }
+
+  String get descriptor {
+    if(type==HoldType.EDGE) {
+      return '${depth} mm';
+    } else {
+      return '${location.toString().split('.')[1]}';
+    }
+  }
 
   Map<String, dynamic> toJson() => _$HoldToJson(this);
   factory Hold.fromJson(Map<String, dynamic> json) => _$HoldFromJson(json);
