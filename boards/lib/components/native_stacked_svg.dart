@@ -74,8 +74,8 @@ class NativeStackedSvgState extends State<NativeStackedSvg> {
         future: SvgService.loadBoard(widget.baseUrl, widget.boardName, widget.numPositions, 1),
         builder: (BuildContext context, AsyncSnapshot<List<BoardContent>> snapshot) {
           if (snapshot.connectionState != ConnectionState.done ||
-            !snapshot.hasData ) {
-            return Loading(insideContainer: true);
+            !snapshot.hasData) {
+            return FittedBox(fit:BoxFit.scaleDown, child:Loading(insideContainer: true));
           }
 
           if(snapshot.data.length==0 ) {
