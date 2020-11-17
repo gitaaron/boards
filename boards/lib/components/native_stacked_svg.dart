@@ -75,7 +75,7 @@ class NativeStackedSvgState extends State<NativeStackedSvg> {
         builder: (BuildContext context, AsyncSnapshot<List<BoardContent>> snapshot) {
           if (snapshot.connectionState != ConnectionState.done ||
             !snapshot.hasData) {
-            return FittedBox(fit:BoxFit.scaleDown, child:Loading(insideContainer: true));
+            return Center(child: FittedBox(fit:BoxFit.scaleDown, child:Loading(insideContainer: true)));
           }
 
           if(snapshot.data.length==0 ) {
