@@ -37,6 +37,29 @@ List<BoardInfo> boards = [
     Hold(HoldType.EDGE, 25, 9, 22, HorizontalBoardLocation.CENTER),
 
   ]),
+  BoardInfo('Simond Ballsy Board', BoardType.fromEnum(UniqueBoardName.simond_ballsy_board), 'https://www.simond.com/climbing-training-beam-ballsy-board-black-id_8360021', [
+    Hold(HoldType.SLOPER, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 42, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 12, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 22, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 22, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 25, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 12, 18, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.SLOPER, 9, null, 11, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 10, null, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 11, 42, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 12, 12, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 22, 15, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 22, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 25, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 12, 19, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.SLOPER, 17, null, 8, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 18, 27, 9, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 19, 35, 10, HorizontalBoardLocation.CENTER),
+  ]),
   BoardInfo(
     'Beastmaker 1000', BoardType.fromEnum(UniqueBoardName.beastmaker_1000), 'https://www.beastmaker.co.uk/products/beastmaker-1000-series', [
     Hold(HoldType.JUG, 1, null, 18, HorizontalBoardLocation.LEFT),
