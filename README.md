@@ -11,4 +11,4 @@ Contains:
 
 See a sample [here](https://gitaaron.github.io/boards/#/).
 
-Impetus for this project was in support for the campus sequence feature in [hangbird](https://hangbird.app).
+Impetus for this project was in support of the campus sequence feature in [hangbird](https://hangbird.app).
