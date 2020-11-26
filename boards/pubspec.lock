@@ -345,13 +345,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.19"
-  loading:
-    dependency: "direct main"
-    description:
-      path: "/Users/asurty/POpen/loading"
-      relative: false
-    source: path
-    version: "0.0.1"
   logging:
     dependency: transitive
     description:

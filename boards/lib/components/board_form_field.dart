@@ -9,7 +9,9 @@ class BoardFormField extends FormField<BoardInfo> {
   final BoardsMap boardsMap;
   final Widget action;
   final String baseUrl;
+  final bool showCaption;
   final bool isRequired;
+  final BoardOverlay overlay;
 
   BoardFormField(
     this.boardsMap,
@@ -17,8 +19,9 @@ class BoardFormField extends FormField<BoardInfo> {
       this.action,
       this.baseUrl,
       this.isRequired = false,
+      this.showCaption = true,
+      this.overlay,
       final Function(BoardInfo) onChanged,
-      final Function() handPosition,
       FormFieldSetter<BoardInfo> onSaved,
       FormFieldValidator<BoardInfo> validator,
       AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
@@ -32,6 +35,14 @@ class BoardFormField extends FormField<BoardInfo> {
     builder: (FormFieldState<BoardInfo> state) {
       BoardInfo boardInfo = state.value;
 
+      List<DropdownMenuItem<String>> items = boardsMap.boards.map<DropdownMenuItem<String>>((BoardInfo value) {
+        return DropdownMenuItem<String>(
+          value:value.type.uniqueName,
+          child:Text('${value.displayName}'),
+        );
+      }).toList();
+
+
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -39,26 +50,30 @@ class BoardFormField extends FormField<BoardInfo> {
             children: [
               DropdownButtonHideUnderline(
                 child: ButtonTheme(
-                  child: DropdownButton<BoardInfo>(
-                    value:boardInfo,
+                  child: DropdownButton<String>(
+                    value:boardInfo?.type?.uniqueName,
                     hint:Row(
                       children: [
                         Text('Select a board'),
-                        SizedBox(width:5.0),
-                        Text(isRequired?'(required)':'(optional)', style:Theme.of(context).textTheme.caption),
+                        Visibility(
+                          visible:showCaption,
+                          child: Row(
+                            children: [
+                              SizedBox(width:5.0),
+                              Text(isRequired?'(required)':'(optional)', style:Theme.of(context).textTheme.caption),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
-                    onChanged:(BoardInfo value) {
+                    onChanged:(String value) {
+                      BoardType _boardType = BoardType(value);
+                      BoardInfo _boardInfo = boardsMap.getInfo(_boardType);
                       state.reset();
-                      state.didChange(value);
-                      if(onChanged!=null) onChanged(value);
+                      state.didChange(_boardInfo);
+                      if(onChanged!=null) onChanged(_boardInfo);
                     },
-                    items:boardsMap.boards.map<DropdownMenuItem<BoardInfo>>((BoardInfo value) {
-                      return DropdownMenuItem<BoardInfo>(
-                        value:value,
-                        child:Text('${value.displayName}'),
-                      );
-                    }).toList(),
+                    items:items,
                   ),
                 ),
               ),
@@ -67,7 +82,7 @@ class BoardFormField extends FormField<BoardInfo> {
           ),
           Visibility(
             visible:boardInfo!=null,
-            child:boardInfo!=null?Board.fromInfo(boardInfo, overlay:BoardOverlay.fromHandPositioning(handPosition()), baseUrl:baseUrl):Container(),
+            child:boardInfo!=null?Board.fromInfo(boardInfo, overlay:overlay ?? BoardOverlay([]), baseUrl:baseUrl):Container(),
           ),
           state.hasError?
           Text(

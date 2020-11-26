@@ -1,3 +1,4 @@
+import 'package:boards/components/loading.dart';
 import 'package:boards/constants.dart';
 import 'package:boards/components/board_provider.dart';
 import 'package:boards/components/cross_platform_svg.dart';
@@ -6,7 +7,6 @@ import 'package:boards/models/board_overlay.dart';
 import 'package:boards/models/board_type.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:loading/loading.dart';
 import 'package:boards/models/board_content.dart';
 
 

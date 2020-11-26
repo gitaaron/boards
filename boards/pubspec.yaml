@@ -1,5 +1,5 @@
 name: boards
-description: A new Flutter package project.
+description: Flutter helpers libraries for working with board_svg and board_metadata
 version: 0.0.1
 author:
 homepage:
@@ -11,9 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  loading:
-    path: /Users/asurty/POpen/loading
 
   flutter_svg: ^0.19.0
 

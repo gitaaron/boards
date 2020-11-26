@@ -1,9 +1,9 @@
+import 'package:boards/components/loading.dart';
 import 'package:boards/models/board_content.dart';
 import 'package:boards/services/svg_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:loading/loading.dart';
 import 'package:boards/components/board_provider.dart';
 
 class NativeStackedSvg extends StatefulWidget {
