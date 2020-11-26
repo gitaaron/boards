@@ -9,4 +9,6 @@ Contains:
   * flutter example
 
 
-See a sample [here](https://gitaaron.github.io/boards/#/)
+See a sample [here](https://gitaaron.github.io/boards/#/).
+
+Impetus for this project was in support for the campus sequence feature in [hangbird](https://hangbird.app).
