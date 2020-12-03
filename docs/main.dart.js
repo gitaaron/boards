@@ -29204,7 +29204,7 @@ aw:function(){return new K.BY(C.k)}}
 K.BY.prototype={
 I:function(a,b){var s,r=this,q=H.b(r.a.c)+"/board_svg/"+H.b(r.a.d)+"/board.svg",p=H.c([],t.t),o=r.a,n=o.r,m=o.x,l=o.y,k=o.z
 p.push(U.ME(q,o.Q,k,l,m,n))
-for(o=P.a1V(r.a.e,new K.V4(r),!0,t.Cw),n=o.length,s=0;s<o.length;o.length===n||(0,H.J)(o),++s)p.push(o[s])
+for(o=P.a1V(r.a.e+1,new K.V4(r),!0,t.Cw),n=o.length,s=0;s<o.length;o.length===n||(0,H.J)(o),++s)p.push(o[s])
 return T.rB(C.fO,p,C.bV,null,null)}}
 K.V4.prototype={
 $1:function(a){var s,r,q,p,o=this.a,n=C.b.eO(o.a.f,a),m=H.b(o.a.c)+"/board_svg/"+H.b(o.a.d)+"/overlays/"+a+".svg"

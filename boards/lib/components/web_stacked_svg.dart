@@ -45,7 +45,7 @@ class WebStackedSvgState extends State<WebStackedSvg> {
           color: widget.color,
           alignment: widget.alignment,
         ),
-        ...List<Widget>.generate(widget.numPositions, (i) {
+        ...List<Widget>.generate(widget.numPositions+1, (i) {
           return Visibility(
             visible:widget.positionsToShow.indexOf(i)!=-1,
             child: Image.network(
