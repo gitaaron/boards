@@ -6,6 +6,34 @@ import 'package:boards/models/hold.dart';
 import 'package:boards/types.dart';
 
 List<BoardInfo> boards = [
+  BoardInfo('Top Out Project', BoardType.fromEnum(UniqueBoardName.topout_project), 'https://www.etsy.com/uk/listing/876885040/project-board-by-top-out-climbing?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=Project+Board+by+Top+Out+Climbing', [
+    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 40, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 20, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 20, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 25, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 25, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 28, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 25, 8, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 9, 15, 9, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 10, 12, 10, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 11, 10, 11, HorizontalBoardLocation.LEFT),
+
+
+    Hold(HoldType.JUG, 12, null, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 40, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 20, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 20, 15, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 25, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 17, 25, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 18, 28, 18, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 19, 25, 19, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 20, 15, 20, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 21, 12, 21, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 22, 10, 22, HorizontalBoardLocation.RIGHT),
+
+
+  ]),
   BoardInfo('Mönster', BoardType.fromEnum(UniqueBoardName.monster), 'https://holdemporium.com/collections/training/products/monster-board', [
     Hold(HoldType.EDGE, 1, 30, 1, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 2, 25, 2, HorizontalBoardLocation.LEFT),
@@ -37,7 +65,7 @@ List<BoardInfo> boards = [
     Hold(HoldType.EDGE, 25, 9, 22, HorizontalBoardLocation.CENTER),
 
   ]),
-  BoardInfo('Simond Ballsy Board', BoardType.fromEnum(UniqueBoardName.simond_ballsy_board), 'https://www.simond.com/climbing-training-beam-ballsy-board-black-id_8360021', [
+  BoardInfo('Simond Ballsy', BoardType.fromEnum(UniqueBoardName.simond_ballsy_board), 'https://www.simond.com/climbing-training-beam-ballsy-board-black-id_8360021', [
     Hold(HoldType.SLOPER, 1, null, 1, HorizontalBoardLocation.LEFT),
     Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 3, 42, 3, HorizontalBoardLocation.LEFT),

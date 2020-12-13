@@ -50,5 +50,6 @@ const _$UniqueBoardNameEnumMap = <UniqueBoardName, dynamic>{
   UniqueBoardName.metolius_project: 'metolius_project',
   UniqueBoardName.metolius_prime_rib: 'metolius_prime_rib',
   UniqueBoardName.simond_ballsy_board: 'simond_ballsy_board',
-  UniqueBoardName.redge_port: 'redge_port'
+  UniqueBoardName.redge_port: 'redge_port',
+  UniqueBoardName.topout_project: 'topout_project'
 };
