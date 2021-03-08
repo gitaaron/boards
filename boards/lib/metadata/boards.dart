@@ -165,6 +165,32 @@ List<BoardInfo> boards = [
 
   ]),
   BoardInfo(
+    'Metolius Wood Grips II Compact', BoardType.fromEnum(UniqueBoardName.metolius_wood_grips_2_compact), 'https://www.metoliusclimbing.com/wood-grips_training_boards.html', [
+    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 29, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 29, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 29, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 19, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 19, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 19, 8, HorizontalBoardLocation.LEFT),
+
+
+    Hold(HoldType.JUG, 9, null, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 10, null, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 11, 29, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 12, 29, 15, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 29, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 19, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 19, 18, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 19, 19, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.SLOPER, 17, null, 9, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 18, 29, 10, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 19, 19, 11, HorizontalBoardLocation.CENTER),
+  ]
+  ),
+  BoardInfo(
     'Metolius Project', BoardType.fromEnum(UniqueBoardName.metolius_project), 'https://www.metoliusclimbing.com/project-board.html', [
       Hold(HoldType.JUG, 1, null, 13, HorizontalBoardLocation.LEFT),
       Hold(HoldType.SLOPER, 2, null, 14, HorizontalBoardLocation.LEFT),
@@ -185,9 +211,6 @@ List<BoardInfo> boards = [
       Hold(HoldType.SLOPER, 15, null, 15, HorizontalBoardLocation.CENTER),
       Hold(HoldType.EDGE, 16, 39, 6, HorizontalBoardLocation.CENTER),
       Hold(HoldType.EDGE, 17, 16, 7, HorizontalBoardLocation.CENTER),
-
-
-
   ]
   ),
   BoardInfo(
