@@ -56,5 +56,6 @@ const _$UniqueBoardNameEnumMap = <UniqueBoardName, dynamic>{
       'metolius_wood_grips_2_compact',
   UniqueBoardName.roots_baseline: 'roots_baseline',
   UniqueBoardName.crusher_3: 'crusher_3',
-  UniqueBoardName.cliffboard_mini_front: 'cliffboard_mini_front'
+  UniqueBoardName.cliffboard_mini_front: 'cliffboard_mini_front',
+  UniqueBoardName.cliffboard_mini_back: 'cliffboard_mini_back'
 };

@@ -136,6 +136,22 @@ List<BoardInfo> boards = [
     Hold(HoldType.EDGE, 8, 15, 8, HorizontalBoardLocation.RIGHT),
     Hold(HoldType.JUG, 9, null, 9, HorizontalBoardLocation.CENTER),
   ]),
+  BoardInfo('Cliffboard Mini (back)', BoardType.fromEnum(UniqueBoardName.cliffboard_mini_back), 'https://awesomewoodys.com/products/cliffboard-mini', [
+    Hold(HoldType.EDGE, 1, 25, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 30, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.JUG, 3, null, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 12, 4, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.EDGE, 5, 25, 5, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 6, 30, 6, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.JUG, 7, null, 7, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 8, 12, 8, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.EDGE, 9, 25, 9, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.JUG, 10, null, 10, HorizontalBoardLocation.CENTER),
+
+  ]
+  ),
   BoardInfo(
     'Beastmaker 1000', BoardType.fromEnum(UniqueBoardName.beastmaker_1000), 'https://www.beastmaker.co.uk/products/beastmaker-1000-series', [
     Hold(HoldType.JUG, 1, null, 18, HorizontalBoardLocation.LEFT),
