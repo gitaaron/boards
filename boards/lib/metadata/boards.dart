@@ -6,72 +6,7 @@ import 'package:boards/models/hold.dart';
 import 'package:boards/types.dart';
 
 List<BoardInfo> boards = [
-  BoardInfo(
-    'Roots Baseline', BoardType.fromEnum(UniqueBoardName.roots_baseline), 'https://www.roots-climbing.com/fingerboards-hangboards', [
-    Hold(HoldType.SLOPER, 1, null, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 3, 22, 3, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 4, 12, 4, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 5, 52, 5, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 6, 35, 6, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 7, 20, 7, HorizontalBoardLocation.LEFT),
 
-    Hold(HoldType.SLOPER, 8, null, 8, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.SLOPER, 9, null, 9, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 10, 12, 10, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 11, 22, 11, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 12, 52, 12, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 13, 35, 13, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 14, 20, 14, HorizontalBoardLocation.RIGHT),
-
-    Hold(HoldType.JUG, 15, null, 15, HorizontalBoardLocation.CENTER),
-    Hold(HoldType.EDGE, 16, 25, 16, HorizontalBoardLocation.CENTER),
-    Hold(HoldType.EDGE, 17, 15, 17, HorizontalBoardLocation.CENTER),
-  ]
-  ),
-  BoardInfo(
-    'Redge Port', BoardType.fromEnum(UniqueBoardName.redge_port), 'https://redgeclimbing.com/product/redge-port-portable-hangboard/', [
-    Hold(HoldType.EDGE, 1, 35, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 2, 35, 2, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 3, 25, 3, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 4, 25, 4, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 5, 20, 5, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 6, 20, 6, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 7, 15, 7, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 8, 15, 8, HorizontalBoardLocation.RIGHT),
-  ]
-  ),
- BoardInfo(
-   'Crusher 3', BoardType.fromEnum(UniqueBoardName.crusher_3), 'http://crusherholds.co.uk/fingerboards/crusher-3-climbing-fingerboard-hangboard', [
-    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 2, 40, 2, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 3, 40, 3, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 4, 30, 4, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 5, 25, 5, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 6, 25, 6, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 7, 20, 7, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 8, 35, 8, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 9, 30, 9, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 10, 25, 10, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 11, 20, 11, HorizontalBoardLocation.LEFT),
-
-   Hold(HoldType.JUG, 12, null, 12, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 13, 40, 13, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 14, 40, 14, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 15, 30, 15, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 16, 25, 16, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 17, 25, 17, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 18, 20, 18, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 19, 35, 19, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 20, 30, 20, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 21, 25, 21, HorizontalBoardLocation.RIGHT),
-   Hold(HoldType.EDGE, 22, 20, 22, HorizontalBoardLocation.RIGHT),
-
-   Hold(HoldType.SLOPER, 23, null, 23, HorizontalBoardLocation.CENTER),
-   Hold(HoldType.EDGE, 24, 35, 24, HorizontalBoardLocation.CENTER),
-   Hold(HoldType.EDGE, 25, 25, 25, HorizontalBoardLocation.CENTER),
-
- ]),
   BoardInfo('Top Out Project', BoardType.fromEnum(UniqueBoardName.topout_project), 'https://www.etsy.com/uk/listing/876885040/project-board-by-top-out-climbing?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=Project+Board+by+Top+Out+Climbing', [
     Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 2, 40, 2, HorizontalBoardLocation.LEFT),
@@ -125,6 +60,205 @@ List<BoardInfo> boards = [
     Hold(HoldType.EDGE, 19, 35, 10, HorizontalBoardLocation.CENTER),
   ]),
 
+  BoardInfo(
+    'Roots Baseline', BoardType.fromEnum(UniqueBoardName.roots_baseline), 'https://www.roots-climbing.com/fingerboards-hangboards', [
+    Hold(HoldType.SLOPER, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 22, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 12, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 52, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 35, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 20, 7, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.SLOPER, 8, null, 8, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 9, null, 9, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 10, 12, 10, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 11, 22, 11, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 12, 52, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 35, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 20, 14, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.JUG, 15, null, 15, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 16, 25, 16, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 17, 15, 17, HorizontalBoardLocation.CENTER),
+  ]
+  ),
+
+  BoardInfo(
+    'Redge Port', BoardType.fromEnum(UniqueBoardName.redge_port), 'https://redgeclimbing.com/product/redge-port-portable-hangboard/', [
+    Hold(HoldType.EDGE, 1, 35, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 35, 2, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 3, 25, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 25, 4, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 5, 20, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 20, 6, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 7, 15, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 15, 8, HorizontalBoardLocation.RIGHT),
+  ]
+  ),
+  BoardInfo('Mönster', BoardType.fromEnum(UniqueBoardName.monster), 'https://holdemporium.com/collections/training/products/monster-board', [
+    Hold(HoldType.EDGE, 1, 30, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 25, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 35, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 20, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 15, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 12, 12, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 10, 13, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 8, 14, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 9, 7, 19, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 10, 6, 20, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 11, 5, 21, HorizontalBoardLocation.LEFT),
+
+
+    Hold(HoldType.EDGE, 12, 30, 3, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 25, 4, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 35, 9, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 20, 10, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 15, 11, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 17, 12, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 18, 10, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 19, 8, 18, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 20, 7, 23, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 21, 6, 24, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 22, 5, 25, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.EDGE, 23, 23, 8, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 24, 16, 15, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 25, 9, 22, HorizontalBoardLocation.CENTER),
+
+  ]),
+  BoardInfo(
+    'Metolius Wood Grips II Compact', BoardType.fromEnum(UniqueBoardName.metolius_wood_grips_2_compact), 'https://www.metoliusclimbing.com/wood-grips_training_boards.html', [
+    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 29, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 29, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 29, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 19, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 19, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 19, 8, HorizontalBoardLocation.LEFT),
+
+
+    Hold(HoldType.JUG, 9, null, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 10, null, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 11, 29, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 12, 29, 15, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 29, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 19, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 19, 18, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 19, 19, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.SLOPER, 17, null, 9, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 18, 29, 10, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 19, 19, 11, HorizontalBoardLocation.CENTER),
+  ]
+  ),
+  BoardInfo(
+    'Metolius Simulator 3D', BoardType.fromEnum(UniqueBoardName.metolius_simulator_3d), 'https://www.metoliusclimbing.com/simulator.html', [
+    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 25, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 3, null, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 4, null, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 19, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 13, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 38, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 13, 8, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 9, 32, 9, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 10, 13, 10, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 11, 13, 11, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 12, 32, 12, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 13, 13, 13, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.JUG, 14, null, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 25, 15, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 16, null, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 17, null, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 18, 19, 18, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 19, 13, 19, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 20, 38, 20, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 21, 13, 21, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 22, 32, 22, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 23, 13, 23, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 24, 13, 24, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 25, 32, 25, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 26, 13, 26, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.JUG, 27, null, 27, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 28, 44, 28, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 29, 32, 29, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 30, 25, 30, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 31, 29, 31, HorizontalBoardLocation.CENTER),
+  ]
+  ),
+  BoardInfo(
+    'Metolius Project', BoardType.fromEnum(UniqueBoardName.metolius_project), 'https://www.metoliusclimbing.com/project-board.html', [
+    Hold(HoldType.JUG, 1, null, 13, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 2, null, 14, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 45, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 30, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 40, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 22, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 22, 5, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.JUG, 8, null, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 9, null, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 10, 45, 8, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 11, 30, 10, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 12, 40, 9, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 22, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 22, 11, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.SLOPER, 15, null, 15, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 16, 39, 6, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 17, 16, 7, HorizontalBoardLocation.CENTER),
+  ]
+  ),
+  BoardInfo(
+    'Metolius Prime Rib', BoardType.fromEnum(UniqueBoardName.metolius_prime_rib), 'https://www.metoliusclimbing.com/prime-rib.html', [
+    Hold(HoldType.EDGE, 1, 38, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 38, 2, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 3, 23, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 23, 4, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 5, 15, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 15, 6, HorizontalBoardLocation.RIGHT),
+  ]
+  ),
+
+
+
+
+  BoardInfo(
+    'Crusher 3', BoardType.fromEnum(UniqueBoardName.crusher_3), 'http://crusherholds.co.uk/fingerboards/crusher-3-climbing-fingerboard-hangboard', [
+    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 40, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 40, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 30, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 25, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 25, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 20, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 35, 8, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 9, 30, 9, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 10, 25, 10, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 11, 20, 11, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.JUG, 12, null, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 40, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 40, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 30, 15, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 25, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 17, 25, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 18, 20, 18, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 19, 35, 19, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 20, 30, 20, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 21, 25, 21, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 22, 20, 22, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.SLOPER, 23, null, 23, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 24, 35, 24, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 25, 25, 25, HorizontalBoardLocation.CENTER),
+
+  ]),
+
   BoardInfo('Cliffboard Mini (front)', BoardType.fromEnum(UniqueBoardName.cliffboard_mini_front), 'https://awesomewoodys.com/products/cliffboard-mini', [
     Hold(HoldType.EDGE, 1, 30, 1, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 2, 18, 2, HorizontalBoardLocation.LEFT),
@@ -136,6 +270,7 @@ List<BoardInfo> boards = [
     Hold(HoldType.EDGE, 8, 15, 8, HorizontalBoardLocation.RIGHT),
     Hold(HoldType.JUG, 9, null, 9, HorizontalBoardLocation.CENTER),
   ]),
+
   BoardInfo('Cliffboard Mini (back)', BoardType.fromEnum(UniqueBoardName.cliffboard_mini_back), 'https://awesomewoodys.com/products/cliffboard-mini', [
     Hold(HoldType.EDGE, 1, 25, 1, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 2, 30, 2, HorizontalBoardLocation.LEFT),
@@ -149,37 +284,6 @@ List<BoardInfo> boards = [
 
     Hold(HoldType.EDGE, 9, 25, 9, HorizontalBoardLocation.RIGHT),
     Hold(HoldType.JUG, 10, null, 10, HorizontalBoardLocation.CENTER),
-
-  ]
-  ),
-  BoardInfo(
-    'Beastmaker 1000', BoardType.fromEnum(UniqueBoardName.beastmaker_1000), 'https://www.beastmaker.co.uk/products/beastmaker-1000-series', [
-    Hold(HoldType.JUG, 1, null, 18, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.SLOPER, 2, null, 19, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 3, 15, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 4, 30, 2, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 5, 45, 3, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 6, 50, 4, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 7, 44, 5, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 8, 20, 7, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 9, 25, 8, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 10, 20, 9, HorizontalBoardLocation.LEFT),
-
-    Hold(HoldType.JUG, 11, null, 22, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.SLOPER, 12, null, 21, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 13, 15, 11, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 14, 30, 10, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 15, 45, 14, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 16, 50, 13, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 17, 44, 12, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 18, 20, 17, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 19, 25, 16, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 20, 20, 15, HorizontalBoardLocation.RIGHT),
-
-    Hold(HoldType.SLOPER, 21, null, 20, HorizontalBoardLocation.CENTER),
-    Hold(HoldType.EDGE, 22, 52, 6, HorizontalBoardLocation.CENTER),
-
-
   ]
   ),
   BoardInfo(
@@ -217,93 +321,33 @@ List<BoardInfo> boards = [
 
   ]),
   BoardInfo(
-    'Metolius Wood Grips II Compact', BoardType.fromEnum(UniqueBoardName.metolius_wood_grips_2_compact), 'https://www.metoliusclimbing.com/wood-grips_training_boards.html', [
-    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 3, 29, 3, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 4, 29, 4, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 5, 29, 5, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 6, 19, 6, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 7, 19, 7, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 8, 19, 8, HorizontalBoardLocation.LEFT),
+    'Beastmaker 1000', BoardType.fromEnum(UniqueBoardName.beastmaker_1000), 'https://www.beastmaker.co.uk/products/beastmaker-1000-series', [
+    Hold(HoldType.JUG, 1, null, 18, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 2, null, 19, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 3, 15, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 30, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 45, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 50, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 44, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 20, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 9, 25, 8, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 10, 20, 9, HorizontalBoardLocation.LEFT),
 
+    Hold(HoldType.JUG, 11, null, 22, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 12, null, 21, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 13, 15, 11, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 14, 30, 10, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 15, 45, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 50, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 17, 44, 12, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 18, 20, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 19, 25, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 20, 20, 15, HorizontalBoardLocation.RIGHT),
 
-    Hold(HoldType.JUG, 9, null, 12, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.SLOPER, 10, null, 13, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 11, 29, 14, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 12, 29, 15, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 13, 29, 16, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 14, 19, 17, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 15, 19, 18, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 16, 19, 19, HorizontalBoardLocation.RIGHT),
-
-    Hold(HoldType.SLOPER, 17, null, 9, HorizontalBoardLocation.CENTER),
-    Hold(HoldType.EDGE, 18, 29, 10, HorizontalBoardLocation.CENTER),
-    Hold(HoldType.EDGE, 19, 19, 11, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.SLOPER, 21, null, 20, HorizontalBoardLocation.CENTER),
+    Hold(HoldType.EDGE, 22, 52, 6, HorizontalBoardLocation.CENTER),
   ]
   ),
-  BoardInfo(
-    'Metolius Project', BoardType.fromEnum(UniqueBoardName.metolius_project), 'https://www.metoliusclimbing.com/project-board.html', [
-      Hold(HoldType.JUG, 1, null, 13, HorizontalBoardLocation.LEFT),
-      Hold(HoldType.SLOPER, 2, null, 14, HorizontalBoardLocation.LEFT),
-      Hold(HoldType.EDGE, 3, 45, 1, HorizontalBoardLocation.LEFT),
-      Hold(HoldType.EDGE, 4, 30, 2, HorizontalBoardLocation.LEFT),
-      Hold(HoldType.EDGE, 5, 40, 3, HorizontalBoardLocation.LEFT),
-      Hold(HoldType.EDGE, 6, 22, 4, HorizontalBoardLocation.LEFT),
-      Hold(HoldType.EDGE, 7, 22, 5, HorizontalBoardLocation.LEFT),
-
-      Hold(HoldType.JUG, 8, null, 17, HorizontalBoardLocation.RIGHT),
-      Hold(HoldType.SLOPER, 9, null, 16, HorizontalBoardLocation.RIGHT),
-      Hold(HoldType.EDGE, 10, 45, 8, HorizontalBoardLocation.RIGHT),
-      Hold(HoldType.EDGE, 11, 30, 10, HorizontalBoardLocation.RIGHT),
-      Hold(HoldType.EDGE, 12, 40, 9, HorizontalBoardLocation.RIGHT),
-      Hold(HoldType.EDGE, 13, 22, 12, HorizontalBoardLocation.RIGHT),
-      Hold(HoldType.EDGE, 14, 22, 11, HorizontalBoardLocation.RIGHT),
-
-      Hold(HoldType.SLOPER, 15, null, 15, HorizontalBoardLocation.CENTER),
-      Hold(HoldType.EDGE, 16, 39, 6, HorizontalBoardLocation.CENTER),
-      Hold(HoldType.EDGE, 17, 16, 7, HorizontalBoardLocation.CENTER),
-  ]
-  ),
-  BoardInfo(
-    'Metolius Prime Rib', BoardType.fromEnum(UniqueBoardName.metolius_prime_rib), 'https://www.metoliusclimbing.com/prime-rib.html', [
-    Hold(HoldType.EDGE, 1, 38, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 2, 38, 2, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 3, 23, 3, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 4, 23, 4, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 5, 15, 5, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 6, 15, 6, HorizontalBoardLocation.RIGHT),
-  ]
-  ),
-  BoardInfo('Mönster', BoardType.fromEnum(UniqueBoardName.monster), 'https://holdemporium.com/collections/training/products/monster-board', [
-    Hold(HoldType.EDGE, 1, 30, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 2, 25, 2, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 3, 35, 5, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 4, 20, 6, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 5, 15, 7, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 6, 12, 12, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 7, 10, 13, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 8, 8, 14, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 9, 7, 19, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 10, 6, 20, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 11, 5, 21, HorizontalBoardLocation.LEFT),
 
 
-    Hold(HoldType.EDGE, 12, 30, 3, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 13, 25, 4, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 14, 35, 9, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 15, 20, 10, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 16, 15, 11, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 17, 12, 16, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 18, 10, 17, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 19, 8, 18, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 20, 7, 23, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 21, 6, 24, HorizontalBoardLocation.RIGHT),
-    Hold(HoldType.EDGE, 22, 5, 25, HorizontalBoardLocation.RIGHT),
-
-    Hold(HoldType.EDGE, 23, 23, 8, HorizontalBoardLocation.CENTER),
-    Hold(HoldType.EDGE, 24, 16, 15, HorizontalBoardLocation.CENTER),
-    Hold(HoldType.EDGE, 25, 9, 22, HorizontalBoardLocation.CENTER),
-
-  ]),
 ];
