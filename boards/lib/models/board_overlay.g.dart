@@ -8,8 +8,11 @@ part of 'board_overlay.dart';
 
 BoardOverlay _$BoardOverlayFromJson(Map json) {
   return BoardOverlay(
-      (json['positions'] as List)?.map((e) => e as int)?.toList());
+    (json['positions'] as List<dynamic>).map((e) => e as int).toList(),
+  );
 }
 
 Map<String, dynamic> _$BoardOverlayToJson(BoardOverlay instance) =>
-    <String, dynamic>{'positions': instance.positions};
+    <String, dynamic>{
+      'positions': instance.positions,
+    };

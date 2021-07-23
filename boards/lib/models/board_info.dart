@@ -67,8 +67,8 @@ class BoardInfo {
     return _edgesAvailable.last;
   }
 
-  int edgeFromPosition(int position) {
-    int edge;
+  int? edgeFromPosition(int position) {
+    int? edge;
     holds.forEach((Hold hold) {
       if(hold.position==position) edge = hold.depth;
     });
@@ -76,9 +76,9 @@ class BoardInfo {
   }
 
 
-  Hold holdFromEdge(int edge, HorizontalBoardLocation location) {
-    Hold hold;
-    Hold centerHold;
+  Hold? holdFromEdge(int edge, HorizontalBoardLocation location) {
+    Hold? hold;
+    Hold? centerHold;
     holds.forEach((Hold holdToTest) {
       if(holdToTest.depth==edge && holdToTest.location==location) {
         hold = holdToTest;
@@ -90,12 +90,16 @@ class BoardInfo {
 
     });
 
-    return hold ?? centerHold;
+    if(hold==null) {
+      return centerHold;
+    } else {
+      return hold;
+    }
 
   }
 
-  int positionFromEdge(int edge, HorizontalBoardLocation location) {
-    return holdFromEdge(edge, location).position;
+  int? positionFromEdge(int edge, HorizontalBoardLocation location) {
+    return holdFromEdge(edge, location)?.position;
   }
 
   Map<int, BoardOverlay> get edgeOverlayMap { return _edgeOverlayMap; }
@@ -105,25 +109,26 @@ class BoardInfo {
     return 1;
   }
 
-  BoardInfo(this.displayName, this.type, this.homePage, this.holds) {
-    _edgeOverlayMap = {};
-    _edgesAvailable = [];
-    _holdsAvailableForLeft = [];
-    _holdsAvailableForRight = [];
+  BoardInfo(this.displayName, this.type, this.homePage, this.holds) :
+    _edgeOverlayMap = {},
+    _edgesAvailable = [],
+    _holdsAvailableForLeft = [],
+    _holdsAvailableForRight = []
+  {
 
     holds.forEach((Hold hold) {
       if(!(_positions[hold.position] ?? false)) {
         _positionCount += 1;
         _positions[hold.position] = true;
       }
-      if(hold.type==HoldType.EDGE && !_edgesAvailable.contains(hold.depth)) _edgesAvailable.add(hold.depth);
+      if(hold.depth!=null && hold.type==HoldType.EDGE && !_edgesAvailable.contains(hold.depth)) _edgesAvailable.add(hold.depth!);
       if(!_holdsAvailableForLeft.contains(hold) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.LEFT)) _holdsAvailableForLeft.add(hold);
       if(!_holdsAvailableForRight.contains(hold) && (hold.location==HorizontalBoardLocation.CENTER || hold.location==HorizontalBoardLocation.RIGHT)) _holdsAvailableForRight.add(hold);
 
-      if(_edgeOverlayMap[hold.depth]==null) {
-        _edgeOverlayMap[hold.depth] = BoardOverlay([hold.position]);
+      if(hold.depth!=null && _edgeOverlayMap[hold.depth]==null) {
+        _edgeOverlayMap[hold.depth!] = BoardOverlay([hold.position]);
       } else {
-        _edgeOverlayMap[hold.depth].addPosition(hold.position);
+        _edgeOverlayMap[hold.depth]?.addPosition(hold.position);
       }
 
     });

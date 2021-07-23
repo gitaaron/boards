@@ -8,11 +8,12 @@ part of 'hold.dart';
 
 Hold _$HoldFromJson(Map json) {
   return Hold(
-      _$enumDecodeNullable(_$HoldTypeEnumMap, json['type']),
-      json['order'] as int,
-      json['depth'] as int,
-      json['position'] as int,
-      _$enumDecodeNullable(_$HorizontalBoardLocationEnumMap, json['location']));
+    _$enumDecode(_$HoldTypeEnumMap, json['type']),
+    json['order'] as int,
+    json['depth'] as int?,
+    json['position'] as int,
+    _$enumDecode(_$HorizontalBoardLocationEnumMap, json['location']),
+  );
 }
 
 Map<String, dynamic> _$HoldToJson(Hold instance) => <String, dynamic>{
@@ -20,38 +21,44 @@ Map<String, dynamic> _$HoldToJson(Hold instance) => <String, dynamic>{
       'depth': instance.depth,
       'order': instance.order,
       'location': _$HorizontalBoardLocationEnumMap[instance.location],
-      'type': _$HoldTypeEnumMap[instance.type]
+      'type': _$HoldTypeEnumMap[instance.type],
     };
 
-T _$enumDecode<T>(Map<T, dynamic> enumValues, dynamic source) {
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
+}) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
-  return enumValues.entries
-      .singleWhere((e) => e.value == source,
-          orElse: () => throw ArgumentError(
-              '`$source` is not one of the supported values: '
-              '${enumValues.values.join(', ')}'))
-      .key;
+
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(Map<T, dynamic> enumValues, dynamic source) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<T>(enumValues, source);
-}
-
-const _$HoldTypeEnumMap = <HoldType, dynamic>{
+const _$HoldTypeEnumMap = {
   HoldType.EDGE: 'EDGE',
   HoldType.PINCH: 'PINCH',
   HoldType.SLOPER: 'SLOPER',
-  HoldType.JUG: 'JUG'
+  HoldType.JUG: 'JUG',
 };
 
-const _$HorizontalBoardLocationEnumMap = <HorizontalBoardLocation, dynamic>{
+const _$HorizontalBoardLocationEnumMap = {
   HorizontalBoardLocation.LEFT: 'LEFT',
   HorizontalBoardLocation.RIGHT: 'RIGHT',
-  HorizontalBoardLocation.CENTER: 'CENTER'
+  HorizontalBoardLocation.CENTER: 'CENTER',
 };

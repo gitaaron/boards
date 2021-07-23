@@ -6,7 +6,7 @@ part 'hold.g.dart';
 @JsonSerializable(explicitToJson: true, anyMap: true)
 class Hold {
   final int position;
-  final int depth;
+  final int? depth;
   final int order;
   final HorizontalBoardLocation location;
   final HoldType type;

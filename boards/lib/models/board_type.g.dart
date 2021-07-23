@@ -7,43 +7,53 @@ part of 'board_type.dart';
 // **************************************************************************
 
 BoardType _$BoardTypeFromJson(Map json) {
-  return BoardType(json['uniqueName'] as String);
+  return BoardType(
+    json['uniqueName'] as String,
+  );
 }
 
-Map<String, dynamic> _$BoardTypeToJson(BoardType instance) =>
-    <String, dynamic>{'uniqueName': instance.uniqueName};
+Map<String, dynamic> _$BoardTypeToJson(BoardType instance) => <String, dynamic>{
+      'uniqueName': instance.uniqueName,
+    };
 
 UniqueBoardType _$UniqueBoardTypeFromJson(Map json) {
   return UniqueBoardType(
-      _$enumDecodeNullable(_$UniqueBoardNameEnumMap, json['uniqueBoardName']));
+    _$enumDecode(_$UniqueBoardNameEnumMap, json['uniqueBoardName']),
+  );
 }
 
 Map<String, dynamic> _$UniqueBoardTypeToJson(UniqueBoardType instance) =>
     <String, dynamic>{
-      'uniqueBoardName': _$UniqueBoardNameEnumMap[instance.uniqueBoardName]
+      'uniqueBoardName': _$UniqueBoardNameEnumMap[instance.uniqueBoardName],
     };
 
-T _$enumDecode<T>(Map<T, dynamic> enumValues, dynamic source) {
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
+}) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
-  return enumValues.entries
-      .singleWhere((e) => e.value == source,
-          orElse: () => throw ArgumentError(
-              '`$source` is not one of the supported values: '
-              '${enumValues.values.join(', ')}'))
-      .key;
+
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(Map<T, dynamic> enumValues, dynamic source) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<T>(enumValues, source);
-}
-
-const _$UniqueBoardNameEnumMap = <UniqueBoardName, dynamic>{
+const _$UniqueBoardNameEnumMap = {
   UniqueBoardName.monster: 'monster',
   UniqueBoardName.beastmaker_1000: 'beastmaker_1000',
   UniqueBoardName.beastmaker_2000: 'beastmaker_2000',
@@ -61,5 +71,5 @@ const _$UniqueBoardNameEnumMap = <UniqueBoardName, dynamic>{
   UniqueBoardName.metolius_simulator_3d: 'metolius_simulator_3d',
   UniqueBoardName.rock_prodigy_training_center: 'rock_prodigy_training_center',
   UniqueBoardName.mountain_rocks: 'mountain_rocks',
-  UniqueBoardName.so_ill_all_chalk_no_action: 'so_ill_all_chalk_no_action'
+  UniqueBoardName.so_ill_all_chalk_no_action: 'so_ill_all_chalk_no_action',
 };

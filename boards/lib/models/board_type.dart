@@ -11,7 +11,8 @@ class BoardType {
   BoardType(this.uniqueName);
 
   factory BoardType.fromEnum(UniqueBoardName uniqueBoardName) {
-    return BoardType(_$UniqueBoardNameEnumMap[uniqueBoardName]);
+    assert(_$UniqueBoardNameEnumMap[uniqueBoardName]!=null, '$uniqueBoardName not found');
+    return BoardType(_$UniqueBoardNameEnumMap[uniqueBoardName]!);
   }
 
   Map<String, dynamic> toJson() => _$BoardTypeToJson(this);

@@ -8,12 +8,13 @@ part of 'hand_positioning.dart';
 
 HandPositioning _$HandPositioningFromJson(Map json) {
   return HandPositioning(
-      leftHandPosition: json['leftHandPosition'] as int,
-      rightHandPosition: json['rightHandPosition'] as int);
+    leftHandPosition: json['leftHandPosition'] as int?,
+    rightHandPosition: json['rightHandPosition'] as int?,
+  );
 }
 
 Map<String, dynamic> _$HandPositioningToJson(HandPositioning instance) =>
     <String, dynamic>{
       'leftHandPosition': instance.leftHandPosition,
-      'rightHandPosition': instance.rightHandPosition
+      'rightHandPosition': instance.rightHandPosition,
     };

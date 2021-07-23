@@ -7,11 +7,11 @@ import 'package:boards/models/board_overlay.dart';
 
 class BoardFormField extends FormField<BoardInfo> {
   final BoardsMap boardsMap;
-  final Widget action;
-  final String baseUrl;
+  final Widget? action;
+  final String? baseUrl;
   final bool showCaption;
   final bool isRequired;
-  final BoardOverlay overlay;
+  final BoardOverlay? overlay;
 
   BoardFormField(
     this.boardsMap,
@@ -21,19 +21,19 @@ class BoardFormField extends FormField<BoardInfo> {
       this.isRequired = false,
       this.showCaption = true,
       this.overlay,
-      final Function(BoardInfo) onChanged,
-      FormFieldSetter<BoardInfo> onSaved,
-      FormFieldValidator<BoardInfo> validator,
+      final Function(BoardInfo)? onChanged,
+      FormFieldSetter<BoardInfo>? onSaved,
+      FormFieldValidator<BoardInfo>? validator,
       AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
       bool autovalidate = false,
-      BuildContext context,
-      BoardInfo initialValue,
+      required BuildContext context,
+      BoardInfo? initialValue,
   }) : assert(context!=null), super(
     onSaved: onSaved,
     validator: validator,
     initialValue: initialValue,
     builder: (FormFieldState<BoardInfo> state) {
-      BoardInfo boardInfo = state.value;
+      BoardInfo? boardInfo = state.value;
 
       List<DropdownMenuItem<String>> items = boardsMap.boards.map<DropdownMenuItem<String>>((BoardInfo value) {
         return DropdownMenuItem<String>(
@@ -66,8 +66,9 @@ class BoardFormField extends FormField<BoardInfo> {
                         ),
                       ],
                     ),
-                    onChanged:(String value) {
-                      BoardType _boardType = BoardType(value);
+                    onChanged:(String? value) {
+                      assert(value!=null, 'Selected a board without a name.');
+                      BoardType _boardType = BoardType(value!);
                       BoardInfo _boardInfo = boardsMap.getInfo(_boardType);
                       state.reset();
                       state.didChange(_boardInfo);
@@ -86,8 +87,8 @@ class BoardFormField extends FormField<BoardInfo> {
           ),
           state.hasError?
           Text(
-            state.errorText,
-            style: Theme.of(context).textTheme.caption.merge(
+            state.errorText!,
+            style: Theme.of(context).textTheme.caption!.merge(
               TextStyle(color: Colors.red),
             ),
           ) :

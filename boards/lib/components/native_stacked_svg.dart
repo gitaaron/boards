@@ -2,7 +2,6 @@ import 'package:boards/components/loading.dart';
 import 'package:boards/models/board_content.dart';
 import 'package:boards/services/svg_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:boards/components/board_provider.dart';
 
@@ -11,10 +10,10 @@ class NativeStackedSvg extends StatefulWidget {
   final String boardName;
   final int numPositions;
   final List<int> positionsToShow;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final BoxFit fit;
-  final Color color;
+  final Color? color;
   final Alignment alignment;
 
   NativeStackedSvg(
@@ -25,9 +24,9 @@ class NativeStackedSvg extends StatefulWidget {
     {
     this.width,
     this.height,
-    this.fit,
+    this.fit = BoxFit.contain,
     this.color,
-    this.alignment
+    this.alignment = Alignment.center,
   });
 
   @override
@@ -68,7 +67,7 @@ class NativeStackedSvgState extends State<NativeStackedSvg> {
     BoardProvider provider = BoardProvider.of(context);
 
     if(provider.cachedBoardContents[widget.boardName]!=null) {
-      return _buildBoardFromContents(provider.cachedBoardContents[widget.boardName]);
+      return _buildBoardFromContents(provider.cachedBoardContents[widget.boardName]!);
     } else {
       return FutureBuilder(
         future: SvgService.loadBoard(widget.baseUrl, widget.boardName, widget.numPositions, 1),
@@ -78,7 +77,7 @@ class NativeStackedSvgState extends State<NativeStackedSvg> {
             return Center(child: FittedBox(fit:BoxFit.scaleDown, child:Loading(insideContainer: true)));
           }
 
-          if(snapshot.data.length==0 ) {
+          if(snapshot.data==null || snapshot.data?.length==0 ) {
             return Column(
               children:[
                 Icon(Icons.error, size:48.0),
@@ -87,7 +86,7 @@ class NativeStackedSvgState extends State<NativeStackedSvg> {
             );
           }
 
-          List<BoardContent> boardContents  = snapshot.data;
+          List<BoardContent> boardContents  = snapshot.data!;
           provider.cachedBoardContents[widget.boardName] = boardContents;
           return _buildBoardFromContents(boardContents);
 
