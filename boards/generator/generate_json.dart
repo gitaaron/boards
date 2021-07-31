@@ -8,6 +8,6 @@ void main() {
   String dir = 'boards_metadata';
   Directory(dir).create().then((_) { print('Dir created ${dir}'); });
 
-  String filename = '${dir}/boards.json';
+  String filename = '${dir}/boards_v2.json';
   File(filename).writeAsString(jsonEncode(boards)).then((File file) { print('finished writing to ${filename}');});
 }
