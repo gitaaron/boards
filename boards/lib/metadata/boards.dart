@@ -118,8 +118,8 @@ List<BoardInfo> boards = [
 
   BoardInfo(
     'Redge Port', BoardType.fromEnum(UniqueBoardName.redge_port), 'https://redgeclimbing.com/product/redge-port-portable-hangboard/', [
-    Hold(HoldType.EDGE, 1, 35, 1, HorizontalBoardLocation.LEFT),
-    Hold(HoldType.EDGE, 2, 35, 2, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 1, 40, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 2, 40, 2, HorizontalBoardLocation.RIGHT),
     Hold(HoldType.EDGE, 3, 25, 3, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 4, 25, 4, HorizontalBoardLocation.RIGHT),
     Hold(HoldType.EDGE, 5, 20, 5, HorizontalBoardLocation.LEFT),
