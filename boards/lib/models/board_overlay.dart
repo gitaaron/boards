@@ -23,7 +23,18 @@ class BoardOverlay {
 
   Map<String, dynamic> toJson() => _$BoardOverlayToJson(this);
 
-  factory BoardOverlay.fromJson(Map<String, dynamic> json) => _$BoardOverlayFromJson(json);
+  factory BoardOverlay.fromJson(Map<String, dynamic> json) {
+    if(json['positions']!=null && json['positions'] is List<dynamic>) {
+      for(var i=0; i < json['positions'].length; i++) {
+        if(json['positions'][i] is String) {
+          json['positions'][i] = int.parse(json['positions'][i])!;
+        }
+      }
+      
+    }
+    BoardOverlay boardOverlay = _$BoardOverlayFromJson(json);   
+    return boardOverlay;
+  }
 
   factory BoardOverlay.makeCopy(BoardOverlay from) {
     return BoardOverlay(from.positions);
