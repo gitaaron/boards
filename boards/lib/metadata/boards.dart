@@ -324,6 +324,33 @@ List<BoardInfo> boards = [
     Hold(HoldType.EDGE, 6, 15, 6, HorizontalBoardLocation.RIGHT),
   ]
   ),
+  BoardInfo(
+      'Level 7 Chalkboard', BoardType.fromEnum(UniqueBoardName.level_7_chalkboard), 'https://level7plastics.com/c-chalkboard', [
+      Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 2, 21, 2, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 3, 25, 3, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 4, 38, 4, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 5, 38, 5, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 6, 38, 6, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 7, 16, 7, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 8, 16, 8, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 9, 16, 9, HorizontalBoardLocation.LEFT),
+
+      Hold(HoldType.JUG, 10, null, 10, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 11, 21, 11, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 12, 25, 12, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 13, 38, 13, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 14, 38, 14, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 15, 38, 15, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 16, 16, 16, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 17, 16, 17, HorizontalBoardLocation.RIGHT),
+      Hold(HoldType.EDGE, 18, 16, 18, HorizontalBoardLocation.RIGHT),
+
+      Hold(HoldType.EDGE, 19, 51, 19, HorizontalBoardLocation.CENTER),
+
+    ]
+  ),
+
 
 
 

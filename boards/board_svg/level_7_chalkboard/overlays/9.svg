@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1741px" height="427px" viewBox="0 0 1741 427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>level_7_chalkboard</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="board" stroke="#979797" stroke-width="0.709">
+            <g id="left" transform="translate(34.110600, 0.499800)" fill="#979797">
+                <g id="9" transform="translate(604.986600, 316.153800)">
+                    <path d="M-1.13686838e-13,30.158 C-1.13686838e-13,13.779 13.277,0.501 29.656,0.501 L168.052,0.498973205 C184.4307,0.4982 197.7087,13.7762 197.7087,30.1542 C197.7087,46.5332 184.4317,59.8112 168.0527,59.8112 L29.6567,59.8132 C13.278,59.814 -1.13686838e-13,46.536 -1.13686838e-13,30.158 Z" id="Stroke-1487"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
