@@ -27,7 +27,7 @@ class BoardOverlay {
     if(json['positions']!=null && json['positions'] is List<dynamic>) {
       for(var i=0; i < json['positions'].length; i++) {
         if(json['positions'][i] is String) {
-          json['positions'][i] = int.parse(json['positions'][i])!;
+          json['positions'][i] = int.parse(json['positions'][i]);
         }
       }
       
