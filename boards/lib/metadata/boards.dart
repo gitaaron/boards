@@ -167,7 +167,7 @@ List<BoardInfo> boards = [
     Hold(HoldType.EDGE, 34, 19, 34, HorizontalBoardLocation.RIGHT,),
   ]
   ),
-  BoardInfo('Mountain Rocks', BoardType.fromEnum(UniqueBoardName.mountain_rocks), 'http://mountainrocks.online/index.html#products', [
+  BoardInfo('Mountain Rocks', BoardType.fromEnum(UniqueBoardName.mountain_rocks), 'https://mountainrocks.com.au/', [
     Hold(HoldType.SLOPER, 1, null, 1, HorizontalBoardLocation.LEFT),
     Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 3, 40, 3, HorizontalBoardLocation.LEFT),
