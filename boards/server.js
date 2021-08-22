@@ -15,7 +15,7 @@ const server = http.createServer((request, response) => {
 
 })
 
-port = 5054
+port = 5056
 
 server.listen(port, () => {
   console.log('Running at http://localhost:'+port);

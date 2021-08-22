@@ -197,6 +197,36 @@ List<BoardInfo> boards = [
     Hold(HoldType.SLOPER, 26, null, 26, HorizontalBoardLocation.RIGHT),
 
   ]),
+  BoardInfo('Mountain Rocks Wildwood 2001', BoardType.fromEnum(UniqueBoardName.mountain_rocks_wildwood_2001), 'https://mountainrocks.com.au/', [
+    Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.SLOPER, 3, null, 3, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 4, 15, 4, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 5, 25, 5, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 6, 40, 6, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 7, 40, 7, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 8, 40, 8, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 9, 40, 9, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 10, 14, 10, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 11, 14, 11, HorizontalBoardLocation.LEFT),
+    Hold(HoldType.EDGE, 12, 14, 12, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.JUG, 13, null, 13, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 14, null, 14, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 15, null, 15, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 16, 15, 16, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 17, 25, 17, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 18, 40, 18, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 19, 40, 19, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 20, 40, 20, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 21, 40, 21, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 22, 14, 22, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 23, 14, 23, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 24, 14, 24, HorizontalBoardLocation.RIGHT),
+
+    Hold(HoldType.EDGE, 25, 40, 25, HorizontalBoardLocation.CENTER),
+
+  ]),
   BoardInfo('Mönster', BoardType.fromEnum(UniqueBoardName.monster), 'https://holdemporium.com/collections/training/products/monster-board', [
     Hold(HoldType.EDGE, 1, 30, 1, HorizontalBoardLocation.LEFT),
     Hold(HoldType.EDGE, 2, 25, 2, HorizontalBoardLocation.LEFT),

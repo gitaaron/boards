@@ -73,4 +73,5 @@ const _$UniqueBoardNameEnumMap = {
   UniqueBoardName.mountain_rocks: 'mountain_rocks',
   UniqueBoardName.so_ill_all_chalk_no_action: 'so_ill_all_chalk_no_action',
   UniqueBoardName.level_7_chalkboard: 'level_7_chalkboard',
+  UniqueBoardName.mountain_rocks_wildwood_2001: 'mountain_rocks_wildwood_2001',
 };
