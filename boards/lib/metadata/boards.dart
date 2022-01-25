@@ -355,6 +355,21 @@ List<BoardInfo> boards = [
   ]
   ),
   BoardInfo(
+    'Manuva', BoardType.fromEnum(UniqueBoardName.manuva), 'https://manuvaclimbing.com/pages/the-manuva-board', [
+      Hold(HoldType.EDGE, 1, 60, 1, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.SLOPER, 2, null, 2, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 3, 45, 3, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 4, 30, 4, HorizontalBoardLocation.LEFT),
+      Hold(HoldType.EDGE, 5, 15, 5, HorizontalBoardLocation.LEFT),
+
+    Hold(HoldType.EDGE, 6, 60, 6, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.SLOPER, 7, null, 7, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 8, 45, 8, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 9, 30, 9, HorizontalBoardLocation.RIGHT),
+    Hold(HoldType.EDGE, 10, 15, 10, HorizontalBoardLocation.RIGHT),
+  ]
+  ),
+  BoardInfo(
       'Level 7 Chalkboard', BoardType.fromEnum(UniqueBoardName.level_7_chalkboard), 'https://level7plastics.com/c-chalkboard', [
       Hold(HoldType.JUG, 1, null, 1, HorizontalBoardLocation.LEFT),
       Hold(HoldType.EDGE, 2, 21, 2, HorizontalBoardLocation.LEFT),
